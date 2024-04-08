@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="454d503d07864c14811648eab2599b00" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.Cart" Width="1.5" PointX="5.625" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.MakeupBrand" Width="1.5" PointX="0.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.Makeup" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.MakeupType" Width="1.5" PointX="0.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.TransactionHeader" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.User" Width="1.5" PointX="5.625" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.TransactionDetail" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_Carts_Makeups" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_Carts_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_Makeups_MakeupBrands" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_Makeups_MakeupTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_TransactionDetails_Makeups" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_TransactionDetails_TransactionHeaders" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_TransactionHeaders_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
