@@ -11,9 +11,9 @@
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 40px 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,16 +21,29 @@ body {
     background-color: #fbe7ef;
 }
 
-.loginFormContainer {
+.formContainer {
     width: 500px;
     max-width: 90%;
-    margin: 100px 0 100px 0;
     text-align: center;
     padding: 40px;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
+
+    .formContainer p {
+        margin-top: 20px;
+    }
+
+        .formContainer p a {
+            text-decoration: none;
+            color: #cf2f74;
+        }
+
+            .formContainer p a:hover {
+                text-decoration: none;
+                color: #cf2f74;
+            }
 
 .logoContainer {
     display: flex;
@@ -77,6 +90,27 @@ h1 {
     background-color: #f7f7f7;
     border-radius: 5px;
 }
+.rBList {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 20px;
+}
+
+    .rBList tbody {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+    }
+
+        .rBList tr {
+            margin-right: 10%;
+        }
+
+            .rBList tr td {
+                display: flex;
+                gap: 8px;
+            }
 
 .formChk {
     display: flex;
