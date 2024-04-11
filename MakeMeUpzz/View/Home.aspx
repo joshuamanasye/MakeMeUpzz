@@ -3,5 +3,5 @@
     <title>MakeMeUpzz - Home</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>tes</h1>
+    <asp:Label ID="usernameLbl" runat="server" Text="Label"></asp:Label>
 </asp:Content>

@@ -10,7 +10,7 @@ namespace MakeMeUpzz.Repository
     {
         private static DBMakeMeUpzzEntities db = null;
 
-        public static DBMakeMeUpzzEntities getInstance()
+        public static DBMakeMeUpzzEntities GetInstance()
         {
             if (db == null)
             {

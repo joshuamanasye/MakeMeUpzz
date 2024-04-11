@@ -1,5 +1,9 @@
 ﻿using MakeMeUpzz.Handler;
+using MakeMeUpzz.Model;
+using System;
 using System.Web;
+using System.Web.SessionState;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace MakeMeUpzz.Controller
@@ -11,32 +15,58 @@ namespace MakeMeUpzz.Controller
         {
             this.userHandler = new UserHandler();
         }
-        private bool checkUsername(string username)
+
+        private void RedirecttoHome(HttpResponse response, HttpSessionState session, string username)
+        {
+            session["username"] = username;
+
+            response.Redirect("Home.aspx");
+        }
+
+        public void CheckCookie(Page currentPage)
+        {
+            HttpCookie cookie = currentPage.Request.Cookies["username"];
+
+            if (cookie == null) { return; }
+
+            string username = cookie.Value;
+
+            User user = userHandler.GetUser(username);
+
+            if (user == null) { return; }
+
+            RedirecttoHome(currentPage.Response, currentPage.Session, username);
+        }
+        private bool CheckUsername(string username)
         {
             if (string.IsNullOrEmpty(username)) return false;
 
             return true;
         }
 
-        private bool checkPassword(string password)
+        private bool CheckPassword(string password)
         {
             if (string.IsNullOrEmpty(password)) return false;
 
             return true;
         }
-        public void doLogin(string username, string password, Label usernameErrorLbl, Label passwordErrorLbl, Label loginErrorLbl, HttpResponse response)
+        public void DoLogin(string username, string password, bool remember, Label usernameErrorLbl, Label passwordErrorLbl, Label loginErrorLbl, HttpResponse response, HttpSessionState session)
         {
-            if (!checkUsername(username)) { usernameErrorLbl.Text = "Username cannot be empty"; return; } else { usernameErrorLbl.Text = string.Empty; }
+            if (!CheckUsername(username)) { usernameErrorLbl.Text = "Username cannot be empty"; return; } else { usernameErrorLbl.Text = string.Empty; }
 
-            if (!checkPassword(password)) { passwordErrorLbl.Text = "Password cannot be empty"; return; } else { passwordErrorLbl.Text = string.Empty; }
+            if (!CheckPassword(password)) { passwordErrorLbl.Text = "Password cannot be empty"; return; } else { passwordErrorLbl.Text = string.Empty; }
 
-            bool loggedIn = userHandler.doLogin(username, password);
-            if (!loggedIn) { loginErrorLbl.Text = "Username or password is incorrect."; return; }
+            bool isAuthenticated = userHandler.Authenticate(username, password);
+            if (!isAuthenticated) { loginErrorLbl.Text = "Username or password is incorrect."; return; }
 
-            HttpCookie cookie = new HttpCookie("username", username);
-            response.Cookies.Add(cookie);
+            if (remember)
+            {
+                HttpCookie cookie = new HttpCookie("username", username);
+                cookie.Expires = DateTime.Now.AddMinutes(2);
+                response.Cookies.Add(cookie);
+            }
 
-            response.Redirect("Home.aspx");
+            RedirecttoHome(response, session, username);
         }
     }
 }

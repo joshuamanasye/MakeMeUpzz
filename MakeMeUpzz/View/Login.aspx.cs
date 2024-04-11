@@ -14,14 +14,17 @@ namespace MakeMeUpzz.View
         protected void Page_Load(object sender, EventArgs e)
         {
             this.loginController = new LoginController();
+
+            loginController.CheckCookie(this);
         }
 
         protected void loginBtn_Click(object sender, EventArgs e)
         {
             string username = usernameTxt.Text;
             string password = passwordTxt.Text;
+            bool remember = rememberChk.Checked;
 
-            loginController.doLogin(username, password, usernameErrorLbl, passwordErrorLbl, loginErrorLbl, Response);
+            loginController.DoLogin(username, password, remember, usernameErrorLbl, passwordErrorLbl, loginErrorLbl, Response, Session);
         }
     }
 }

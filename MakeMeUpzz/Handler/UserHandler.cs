@@ -9,10 +9,14 @@ namespace MakeMeUpzz.Handler
 {
     public class UserHandler
     {
-        public UserHandler() { }
-        public bool doLogin(string username, string password)
+        UserRepository userRepository;
+        public UserHandler()
         {
-            User user = UserRepository.getUser(username);
+            this.userRepository = new UserRepository();
+        }
+        public bool Authenticate(string username, string password)
+        {
+            User user = userRepository.GetUser(username);
 
             if (user == null || !password.Equals(user.UserPassword))
             {
@@ -20,6 +24,11 @@ namespace MakeMeUpzz.Handler
             }
 
             return true;
+        }
+
+        public User GetUser(string username)
+        {
+            return userRepository.GetUser(username);
         }
     }
 }

@@ -27,7 +27,7 @@ nav {
 
     nav.solid {
         background-color: #fff;
-        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+        border-bottom: 1px solid #c0c4c6;
     }
 
         nav.solid::after {
@@ -36,7 +36,6 @@ nav {
 
     nav a:hover, .sidebar a:hover {
         text-decoration: none;
-        transform: scale(1.01);
         color: #454a4e;
     }
 
@@ -54,10 +53,9 @@ nav p, .sidebar p {
 }
 
 .current-page a p {
-    color: rgb(48, 56, 62);
+    color: #000;
     pointer-events: none;
     cursor: default;
-    scale: 1.1;
 }
 
 .left {
@@ -73,7 +71,7 @@ nav p, .sidebar p {
     width: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .nav-item {

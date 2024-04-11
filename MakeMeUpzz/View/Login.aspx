@@ -28,6 +28,10 @@
                 <asp:TextBox CssClass="formTxt" ID="passwordTxt" runat="server"></asp:TextBox>
                 <asp:Label CssClass="formErrorLbl" ID="passwordErrorLbl" runat="server" Text=""></asp:Label>
             </div>
+
+            <div class="inputRow">
+                <asp:CheckBox CssClass="formChk" ID="rememberChk" runat="server" Text="Remember me" />
+            </div>
             
             <div class="inputRow">
                 <asp:Label CssClass="formErrorLbl" ID="loginErrorLbl" runat="server" Text=""></asp:Label>

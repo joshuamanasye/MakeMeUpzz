@@ -93,12 +93,14 @@
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
     <Content Include="View\CSS\loginRegister.css" />
+    <Content Include="View\CSS\master.css" />
     <Content Include="View\CSS\navbar.css" />
     <Content Include="View\Home.aspx" />
     <Content Include="View\Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Cart.cs">

@@ -71,11 +71,18 @@ h1 {
 }
 
 .formTxt {
-    font-size: 1rem;
+    font-size: 16px;
     padding: 10px;
     border: none;
     background-color: #f7f7f7;
     border-radius: 5px;
+}
+
+.formChk {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .formErrorLbl {

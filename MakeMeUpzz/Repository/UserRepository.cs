@@ -8,14 +8,14 @@ namespace MakeMeUpzz.Repository
 {
     public class UserRepository
     {
-        private static DBMakeMeUpzzEntities db = DatabaseSingleton.getInstance();
+        private DBMakeMeUpzzEntities db = DatabaseSingleton.GetInstance();
 
-        public static List<User> getUsers()
+        public List<User> GetUsers()
         {
             return (from User in db.Users select User).ToList();
         }
 
-        public static User getUser(string username)
+        public User GetUser(string username)
         {
             return (from User in db.Users where User.Username.Equals(username) select User).FirstOrDefault();
         }
