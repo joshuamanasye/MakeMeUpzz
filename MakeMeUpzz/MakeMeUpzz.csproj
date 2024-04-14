@@ -103,6 +103,9 @@
   <ItemGroup>
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\MasterController.cs" />
+    <Compile Include="Controller\RegisterController.cs" />
+    <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Cart.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
@@ -191,7 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Factory\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

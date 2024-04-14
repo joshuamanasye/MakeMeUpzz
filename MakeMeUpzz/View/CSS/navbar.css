@@ -52,12 +52,6 @@ nav p, .sidebar p {
     white-space: nowrap;
 }
 
-.current-page a p {
-    color: #000;
-    pointer-events: none;
-    cursor: default;
-}
-
 .left {
     display: flex;
     justify-content: center;
@@ -77,6 +71,29 @@ nav p, .sidebar p {
 .nav-item {
     padding: 0 20px;
     transition: 0.1s;
+}
+
+    .nav-item input {
+        display: flex;
+        flex-wrap: nowrap;
+        color: #767a7c;
+        text-decoration: none;
+        font-size: 1.2rem;
+        letter-spacing: 0.1rem;
+        white-space: nowrap;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+
+        .nav-item input:hover {
+            color: #454a4e;
+        }
+
+.current-page a {
+    color: #000;
+    pointer-events: none;
+    cursor: default;
 }
 
 .dropdown-menu {

@@ -40,7 +40,8 @@
 
         <div class="inputRow">
             <asp:Label CssClass="formLbl"  ID="dobLbl" runat="server" Text="Date of Birth"></asp:Label>
-            <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+            <asp:Calendar CssClass="formCalendar" ID="dobCalendar" runat="server"></asp:Calendar>
+            <asp:Label CssClass="formErrorLbl" ID="dobErrorLbl" runat="server" Text=""></asp:Label>
         </div>
 
         <div class="inputRow">
@@ -53,10 +54,6 @@
             <asp:Label CssClass="formLbl"  ID="passwordConfirmLbl" runat="server" Text="Confirm Password"></asp:Label>
             <asp:TextBox CssClass="formTxt" ID="passwordConfirmTxt" runat="server" TextMode="Password"></asp:TextBox>
             <asp:Label CssClass="formErrorLbl" ID="passwordConfirmErrorLbl" runat="server" Text=""></asp:Label>
-        </div>
-        
-        <div class="inputRow">
-            <asp:Label CssClass="formErrorLbl" ID="loginErrorLbl" runat="server" Text=""></asp:Label>
         </div>
 
         <asp:Button CssClass="formButton" ID="registerBtn" runat="server" Text="Register" OnClick="registerBtn_Click" />

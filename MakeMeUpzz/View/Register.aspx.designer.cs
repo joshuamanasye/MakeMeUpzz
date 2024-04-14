@@ -123,13 +123,22 @@ namespace MakeMeUpzz.View
         protected global::System.Web.UI.WebControls.Label dobLbl;
 
         /// <summary>
-        /// Calendar1 control.
+        /// dobCalendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.Calendar dobCalendar;
+
+        /// <summary>
+        /// dobErrorLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label dobErrorLbl;
 
         /// <summary>
         /// passwordLbl control.
@@ -184,15 +193,6 @@ namespace MakeMeUpzz.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label passwordConfirmErrorLbl;
-
-        /// <summary>
-        /// loginErrorLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label loginErrorLbl;
 
         /// <summary>
         /// registerBtn control.

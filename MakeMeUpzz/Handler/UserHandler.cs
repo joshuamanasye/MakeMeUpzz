@@ -1,4 +1,5 @@
-﻿using MakeMeUpzz.Model;
+﻿using MakeMeUpzz.Factory;
+using MakeMeUpzz.Model;
 using MakeMeUpzz.Repository;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,17 @@ namespace MakeMeUpzz.Handler
         public User GetUser(string username)
         {
             return userRepository.GetUser(username);
+        }
+
+        public void AddCustomer(string username, string email, string gender, DateTime dob, string password)
+        {
+            UserFactory userFactory = new UserFactory();
+
+            int newID = userRepository.GenerateID();
+
+            User newCustomer = userFactory.CreateUser(newID, username, email, gender, dob, password, "customer");
+
+            userRepository.AddUser(newCustomer);
         }
     }
 }

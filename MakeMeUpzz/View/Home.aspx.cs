@@ -13,6 +13,8 @@ namespace MakeMeUpzz.View
         private HomeController homeController;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack) { return; }
+            
             this.homeController = new HomeController();
 
             homeController.LoadUser(Response, Session, Request.Cookies["username"], usernameLbl);

@@ -37,27 +37,41 @@ namespace MakeMeUpzz.Controller
 
             RedirecttoHome(currentPage.Response, currentPage.Session, username);
         }
-        private bool CheckUsername(string username)
+        private bool CheckUsername(string username, Label usernameErrorLbl)
         {
-            if (string.IsNullOrEmpty(username)) return false;
+            if (string.IsNullOrEmpty(username))
+            {
+                usernameErrorLbl.Text = "Username cannot be empty";
+                return false;
+            }
 
+            usernameErrorLbl.Text = string.Empty;
             return true;
         }
 
-        private bool CheckPassword(string password)
+        private bool CheckPassword(string password, Label passwordErrorLbl)
         {
-            if (string.IsNullOrEmpty(password)) return false;
+            if (string.IsNullOrEmpty(password))
+            {
+                passwordErrorLbl.Text = "Password cannot be empty";
+                return false;
+            }
 
+            passwordErrorLbl.Text = string.Empty;
             return true;
         }
         public void DoLogin(string username, string password, bool remember, Label usernameErrorLbl, Label passwordErrorLbl, Label loginErrorLbl, HttpResponse response, HttpSessionState session)
         {
-            if (!CheckUsername(username)) { usernameErrorLbl.Text = "Username cannot be empty"; return; } else { usernameErrorLbl.Text = string.Empty; }
+            bool validInput = true;
 
-            if (!CheckPassword(password)) { passwordErrorLbl.Text = "Password cannot be empty"; return; } else { passwordErrorLbl.Text = string.Empty; }
+            if (!CheckUsername(username, usernameErrorLbl)) { validInput = false; }
+
+            if (!CheckPassword(password, passwordErrorLbl)) { validInput = false; }
 
             bool isAuthenticated = userHandler.Authenticate(username, password);
-            if (!isAuthenticated) { loginErrorLbl.Text = "Username or password is incorrect."; return; }
+            if (!isAuthenticated) { loginErrorLbl.Text = "Username or password is incorrect."; validInput = false; }
+
+            if (!validInput) { return; }
 
             if (remember)
             {
