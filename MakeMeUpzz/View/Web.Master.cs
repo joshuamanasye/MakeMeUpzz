@@ -10,15 +10,15 @@ namespace MakeMeUpzz.View
 {
     public partial class Web : System.Web.UI.MasterPage
     {
-        MasterController masterController;
+        MasterController controller;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.masterController = new MasterController();
+            this.controller = new MasterController();
         }
 
         protected void logoutBtn_Click(object sender, EventArgs e)
         {
-            masterController.DoLogout(Context);
+            controller.DoLogout(Context);
         }
     }
 }

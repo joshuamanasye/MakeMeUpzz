@@ -10,11 +10,11 @@ namespace MakeMeUpzz.View
 {
     public partial class Register : System.Web.UI.Page
     {
-        RegisterController registerController;
+        RegisterController controller;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            registerController = new RegisterController();
+            controller = new RegisterController();
         }
 
         protected void registerBtn_Click(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace MakeMeUpzz.View
             string password = passwordTxt.Text;
             string passwordConfirm = passwordConfirmTxt.Text;
 
-            registerController.DoRegister(username, email, gender, dob,
+            controller.DoRegister(username, email, gender, dob,
                 password, passwordConfirm, usernameErrorLbl, emailErrorLbl,
                 genderErrorLbl, dobErrorLbl, passwordErrorLbl, passwordConfirmErrorLbl,
                 Response);

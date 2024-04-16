@@ -10,12 +10,12 @@ namespace MakeMeUpzz.View
 {
     public partial class Login : System.Web.UI.Page
     {
-        private LoginController loginController;
+        private LoginController controller;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.loginController = new LoginController();
+            this.controller = new LoginController();
 
-            loginController.CheckCookie(this);
+            controller.CheckCookie(this);
         }
 
         protected void loginBtn_Click(object sender, EventArgs e)
@@ -24,7 +24,7 @@ namespace MakeMeUpzz.View
             string password = passwordTxt.Text;
             bool remember = rememberChk.Checked;
 
-            loginController.DoLogin(username, password, remember, usernameErrorLbl, passwordErrorLbl, loginErrorLbl, Response, Session);
+            controller.DoLogin(username, password, remember, usernameErrorLbl, passwordErrorLbl, loginErrorLbl, Response, Session);
         }
     }
 }
