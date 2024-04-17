@@ -36,7 +36,7 @@ namespace MakeMeUpzz.Handler
         {
             UserFactory userFactory = new UserFactory();
 
-            int newID = userRepository.GenerateID();
+            int newID = userRepository.GetLastID() + 1;
 
             User newCustomer = userFactory.CreateUser(newID, username, email, gender, dob, password, "customer");
 

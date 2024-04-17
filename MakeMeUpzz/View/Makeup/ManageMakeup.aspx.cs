@@ -1,4 +1,5 @@
 ﻿using MakeMeUpzz.Controllers;
+using MakeMeUpzz.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,13 @@ namespace MakeMeUpzz.View
 {
     public partial class ManageMakeup : System.Web.UI.Page
     {
-        private ManageMakeupController controller;
+        private MakeupController controller;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            controller = new ManageMakeupController();
+            controller = new MakeupController();
+
+            //cek admin bkn, kalo bkn return
 
             if (IsPostBack) { return; }
 
@@ -23,7 +26,7 @@ namespace MakeMeUpzz.View
 
         protected void makeupGV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            controller.DeleteMakeup(makeupGV, e);
         }
 
         protected void makeupGV_RowEditing(object sender, GridViewEditEventArgs e)

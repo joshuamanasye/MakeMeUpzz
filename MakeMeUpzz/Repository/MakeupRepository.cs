@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 
 namespace MakeMeUpzz.Repository
 {
@@ -27,6 +28,36 @@ namespace MakeMeUpzz.Repository
             Makeup makeup = (from m in db.Makeups where m.MakeupID.Equals(id) select m).FirstOrDefault();
 
             return makeup;
+        }
+
+        public void DeleteMakeup(Makeup makeup)
+        {
+            db.Makeups.Remove(makeup);
+            db.SaveChanges();
+        }
+
+        public List<MakeupType> GetMakeupTypes()
+        {
+            List<MakeupType> types = (from t in db.MakeupTypes select t).ToList();
+
+            return types;
+        }
+
+        public List<MakeupBrand> GetMakeupBrands()
+        {
+            List<MakeupBrand> brands = (from b in db.MakeupBrands select b).ToList();
+
+            return brands;
+        }
+
+        public int GetMakeupTypeIDByName(string name)
+        {
+            return (from t in db.MakeupTypes where t.MakeupTypeName.Equals(name) select t.MakeupTypeID).FirstOrDefault();
+        }
+
+        public int GetMakeupBrandIDByName(string name)
+        {
+            return (from b in db.MakeupBrands where b.MakeupBrandName.Equals(name) select b.MakeupBrandID).FirstOrDefault();
         }
     }
 }

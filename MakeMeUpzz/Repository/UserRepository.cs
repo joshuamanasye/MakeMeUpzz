@@ -28,12 +28,9 @@ namespace MakeMeUpzz.Repository
             db.SaveChanges();
         }
 
-        public int GenerateID()
+        public int GetLastID()
         {
-            int id = 0;
-
-            id = Convert.ToInt32(db.Users.Max(u => u.UserID));
-            id++;
+            int id = Convert.ToInt32((from u in db.Users select u.UserID).LastOrDefault());
 
             return id;
         }
