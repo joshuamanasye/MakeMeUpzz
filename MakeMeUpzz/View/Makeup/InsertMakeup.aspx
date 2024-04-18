@@ -2,6 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <a href="ManageMakeup.aspx"><< Back</a>
+
     <div class="inputRow">
         <asp:Label ID="nameLbl" runat="server" Text="Name"></asp:Label>
         <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox>
@@ -26,6 +28,6 @@
         <asp:DropDownList ID="brandDdl" runat="server"></asp:DropDownList>
     </div>
     <div class="inputRow">
-        <asp:Button ID="isnertBtn" runat="server" Text="Insert" OnClick="isnertBtn_Click" />
+        <asp:Button ID="insertBtn" runat="server" Text="Insert" OnClick="insertBtn_Click" />
     </div>
 </asp:Content>

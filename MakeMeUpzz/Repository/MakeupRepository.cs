@@ -25,13 +25,23 @@ namespace MakeMeUpzz.Repository
 
         public Makeup GetMakeupById(int id)
         {
-            Makeup makeup = (from m in db.Makeups where m.MakeupID.Equals(id) select m).FirstOrDefault();
+            Makeup makeup = (from m in db.Makeups where m.MakeupID == id select m).FirstOrDefault();
 
             return makeup;
         }
 
+        public void AddMakeup(Makeup makeup)
+        {
+            if (makeup == null) { return; }
+
+            db.Makeups.Add(makeup);
+            db.SaveChanges();
+        }
+
         public void DeleteMakeup(Makeup makeup)
         {
+            if (makeup == null) { return; }
+            
             db.Makeups.Remove(makeup);
             db.SaveChanges();
         }
@@ -58,6 +68,13 @@ namespace MakeMeUpzz.Repository
         public int GetMakeupBrandIDByName(string name)
         {
             return (from b in db.MakeupBrands where b.MakeupBrandName.Equals(name) select b.MakeupBrandID).FirstOrDefault();
+        }
+
+        public int GetLastID()
+        {
+            int id = Convert.ToInt32((from m in db.Makeups select m.MakeupID).ToList().LastOrDefault());
+
+            return id;
         }
     }
 }

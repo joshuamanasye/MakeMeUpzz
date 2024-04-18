@@ -120,15 +120,10 @@ namespace MakeMeUpzz.Controller
             bool validInput = true;
 
             if (!CheckUsername(username, usernameErrorLbl)) { validInput = false; }
-
             if (!CheckEmail(email, emailErrorLbl)) { validInput = false; }
-
             if (!CheckGender(gender, genderErrorLbl)) { validInput = false; }
-
             if (!CheckDob(dob, dobErrorLbl)) { validInput = false; }
-
             if (!CheckPassword(password, passwordErrorLbl)) { validInput = false; }
-
             if (!CheckPasswordConfirm(passwordConfirm, password, passwordConfirmErrorLbl)) { validInput = false; }
 
             if (!validInput) { return; }

@@ -65,7 +65,6 @@ namespace MakeMeUpzz.Controller
             bool validInput = true;
 
             if (!CheckUsername(username, usernameErrorLbl)) { validInput = false; }
-
             if (!CheckPassword(password, passwordErrorLbl)) { validInput = false; }
 
             bool isAuthenticated = userHandler.Authenticate(username, password);

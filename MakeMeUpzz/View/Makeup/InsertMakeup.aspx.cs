@@ -15,12 +15,14 @@ namespace MakeMeUpzz.View.Makeup
         {
             this.controller = new MakeupController();
 
+            //TODO check if user is admin
+
             if (IsPostBack) { return; }
 
             controller.LoadMakeupDDL(typeDdl, brandDdl);
         }
 
-        protected void isnertBtn_Click(object sender, EventArgs e)
+        protected void insertBtn_Click(object sender, EventArgs e)
         {
             string name = nameTxt.Text;
             string price = priceTxt.Text;
@@ -28,7 +30,7 @@ namespace MakeMeUpzz.View.Makeup
             string typeName = typeDdl.SelectedValue;
             string brandName = brandDdl.SelectedValue;
 
-
+            controller.InsertMakeup(name, price, weight, typeName, brandName, nameErrorLbl, priceErrorLbl, weightErrorLbl, Response);
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿using MakeMeUpzz.Model;
+﻿using MakeMeUpzz.Factory;
+using MakeMeUpzz.Model;
 using MakeMeUpzz.Repository;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
@@ -64,6 +66,20 @@ namespace MakeMeUpzz.Handler
             }
 
             return brandNames;
+        }
+
+        public void AddMakeup(string name, int price, int weight, string typeName, string brandName)
+        {
+            int newId = repository.GetLastID() + 1;
+
+            int typeId = repository.GetMakeupTypeIDByName(typeName);
+            int brandId = repository.GetMakeupBrandIDByName(brandName);
+
+            MakeupFactory factory = new MakeupFactory();
+
+            Makeup newMakeup = factory.CreateMakeup(newId, name, price, weight, typeId, brandId);
+
+            repository.AddMakeup(newMakeup);
         }
     }
 }

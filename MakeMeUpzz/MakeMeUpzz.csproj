@@ -108,6 +108,7 @@
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\MasterController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
+    <Compile Include="Factory\MakeupFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\MakeUpHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />

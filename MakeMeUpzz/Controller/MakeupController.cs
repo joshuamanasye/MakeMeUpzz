@@ -3,6 +3,7 @@ using MakeMeUpzz.Model;
 using MakeMeUpzz.Repository;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
@@ -42,29 +43,22 @@ namespace MakeMeUpzz.Controllers
             LoadBrands(brands);
         }
 
-        public void InsertMakeup()
-        {
-
-        }
-
         public void DeleteMakeup(GridView gv, GridViewDeleteEventArgs e)
         {
             int id = Convert.ToInt32(gv.Rows[e.RowIndex].Cells[0].Text);
 
             makeupHandler.DeleteMakeupByID(id);
+
+            LoadMakeups(gv);
         }
 
         private int ToInt(string str)
         {
-            int a = -1;
-
-            try
-            {
-                a = Convert.ToInt32(str);
+            if (int.TryParse(str, out int number)) {
+                return number;
             }
-            catch { }
 
-            return a;
+            return -1;
         }
 
         private bool CheckName(string name, Label nameErrorLbl)
@@ -76,13 +70,13 @@ namespace MakeMeUpzz.Controllers
                 return false;
             }
 
+            nameErrorLbl.Text = string.Empty;
+
             return true;
         }
 
-        private bool CheckPrice(string priceStr, Label priceErrorLbl)
+        private bool CheckPrice(int price, Label priceErrorLbl)
         {
-            int price = ToInt(priceStr);
-
             if (price < 1)
             {
                 priceErrorLbl.Text = "Price must be >= 1";
@@ -90,20 +84,42 @@ namespace MakeMeUpzz.Controllers
                 return false;
             }
 
+            priceErrorLbl.Text = string.Empty;
+
             return true;
         }
 
-        //TODO
+        private bool CheckWeight(int weight, Label weightErrorLbl)
+        {
+            if (weight > 1500 || weight < 1)
+            {
+                weightErrorLbl.Text = "Cannot be less than 1500 and more than 0";
 
-        public void InsertMakeup(string name, string price, string weight, string typeName, string brandName,
-            Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl)
+                return false;
+            }
+
+            weightErrorLbl.Text = string.Empty;
+
+            return true;
+        }
+
+        public void InsertMakeup(string name, string priceStr, string weightStr, string typeName, string brandName,
+            Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl, HttpResponse response)
         {
             bool validInput = true;
 
+            int price = ToInt(priceStr);
+            int weight = ToInt(weightStr);
+
             if (!CheckName(name, nameErrorLbl)) { validInput = false; }
             if (!CheckPrice(price, priceErrorLbl)) { validInput = false; }
+            if (!CheckWeight(weight, weightErrorLbl)) { validInput = false; }
 
             if (!validInput) { return; }
+
+            makeupHandler.AddMakeup(name, price, weight, typeName, brandName);
+
+            response.Redirect("ManageMakeup.aspx");
         }
     }
 }

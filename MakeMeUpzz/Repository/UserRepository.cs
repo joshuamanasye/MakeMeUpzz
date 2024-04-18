@@ -22,7 +22,7 @@ namespace MakeMeUpzz.Repository
 
         public void AddUser(User user)
         {
-            if (user == null) { return;  }
+            if (user == null) { return; }
 
             db.Users.Add(user);
             db.SaveChanges();
@@ -30,7 +30,7 @@ namespace MakeMeUpzz.Repository
 
         public int GetLastID()
         {
-            int id = Convert.ToInt32((from u in db.Users select u.UserID).LastOrDefault());
+            int id = Convert.ToInt32((from u in db.Users select u.UserID).ToList().LastOrDefault());
 
             return id;
         }

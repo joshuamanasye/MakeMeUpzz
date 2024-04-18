@@ -6,7 +6,7 @@
         <Columns>
             <asp:BoundField DataField="MakeupID" HeaderText="ID" SortExpression="MakeupID" />
             <asp:BoundField DataField="MakeupName" HeaderText="Name" SortExpression="MakeupName" />
-            <asp:BoundField DataField="MakeupWeight" HeaderText="Price" SortExpression="MakeupWeight" />
+            <asp:BoundField DataField="MakeupPrice" HeaderText="Price" SortExpression="MakeupPrice" />
             <asp:BoundField DataField="MakeupWeight" HeaderText="Weight" SortExpression="MakeupWeight" />
             <asp:BoundField DataField="MakeupType.MakeupTypeName" HeaderText="Type" SortExpression="MakeupTypeName" />
             <asp:BoundField DataField="MakeupBrand.MakeupBrandName" HeaderText="Brand" SortExpression="MakeupBrandName" />
@@ -14,5 +14,7 @@
             <asp:CommandField ButtonType="Button" HeaderText="Action" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" ShowHeader="True"/>
         </Columns>
     </asp:GridView>
+
+    <a href="InsertMakeup.aspx">Insert Makeup</a>
 
 </asp:Content>
