@@ -29,7 +29,7 @@ namespace MakeMeUpzz.Controller
                 return false;
             }
 
-            if (userHandler.GetUser(username) != null)
+            if (UserHandler.GetUser(username) != null)
             {
                 usernameErrorLbl.Text = "Username already exists";
                 return false;
@@ -128,7 +128,7 @@ namespace MakeMeUpzz.Controller
 
             if (!validInput) { return; }
 
-            userHandler.AddCustomer(username, email, gender, dob, password);
+            UserHandler.AddCustomer(username, email, gender, dob, password);
 
             response.Redirect("~/View/Login.aspx");
         }

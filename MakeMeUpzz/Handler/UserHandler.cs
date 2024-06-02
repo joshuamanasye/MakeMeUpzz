@@ -10,14 +10,9 @@ namespace MakeMeUpzz.Handler
 {
     public class UserHandler
     {
-        UserRepository userRepository;
-        public UserHandler()
+        public static bool Authenticate(string username, string password)
         {
-            this.userRepository = new UserRepository();
-        }
-        public bool Authenticate(string username, string password)
-        {
-            User user = userRepository.GetUser(username);
+            User user = UserRepository.GetUser(username);
 
             if (user == null || !password.Equals(user.UserPassword))
             {
@@ -27,20 +22,20 @@ namespace MakeMeUpzz.Handler
             return true;
         }
 
-        public User GetUser(string username)
+        public static User GetUser(string username)
         {
-            return userRepository.GetUser(username);
+            return UserRepository.GetUser(username);
         }
 
-        public void AddCustomer(string username, string email, string gender, DateTime dob, string password)
+        public static void AddCustomer(string username, string email, string gender, DateTime dob, string password)
         {
             UserFactory userFactory = new UserFactory();
 
-            int newID = userRepository.GetLastID() + 1;
+            int newID = UserRepository.GetLastID() + 1;
 
             User newCustomer = userFactory.CreateUser(newID, username, email, gender, dob, password, "customer");
 
-            userRepository.AddUser(newCustomer);
+            UserRepository.AddUser(newCustomer);
         }
     }
 }

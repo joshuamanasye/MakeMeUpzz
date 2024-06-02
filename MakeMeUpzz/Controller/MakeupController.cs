@@ -12,28 +12,27 @@ namespace MakeMeUpzz.Controllers
 {
     public class MakeupController
     {
-        MakeUpHandler makeupHandler;
 
         public MakeupController()
         {
-            makeupHandler = new MakeUpHandler();
+            
         }
 
         public void LoadMakeups(GridView gv)
         {
-            gv.DataSource = makeupHandler.GetMakeups();
+            gv.DataSource = MakeUpHandler.GetMakeups();
             gv.DataBind();
         }
 
         public void LoadTypes(DropDownList ddl)
         {
-            ddl.DataSource = makeupHandler.GetMakeupTypeNames();
+            ddl.DataSource = MakeUpHandler.GetMakeupTypeNames();
             ddl.DataBind();
         }
 
         public void LoadBrands(DropDownList ddl)
         {
-            ddl.DataSource = makeupHandler.GetMakeupBrandNames();
+            ddl.DataSource = MakeUpHandler.GetMakeupBrandNames();
             ddl.DataBind();
         }
 
@@ -47,7 +46,7 @@ namespace MakeMeUpzz.Controllers
         {
             int id = Convert.ToInt32(gv.Rows[e.RowIndex].Cells[0].Text);
 
-            makeupHandler.DeleteMakeupByID(id);
+            MakeUpHandler.DeleteMakeupByID(id);
 
             LoadMakeups(gv);
         }
@@ -117,7 +116,7 @@ namespace MakeMeUpzz.Controllers
 
             if (!validInput) { return; }
 
-            makeupHandler.AddMakeup(name, price, weight, typeName, brandName);
+            MakeUpHandler.AddMakeup(name, price, weight, typeName, brandName);
 
             response.Redirect("ManageMakeup.aspx");
         }

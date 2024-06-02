@@ -9,28 +9,23 @@ namespace MakeMeUpzz.Repository
 {
     public class MakeupRepository
     {
-        private DBMakeMeUpzzEntities db;
+        private static DBMakeMeUpzzEntities db = DatabaseSingleton.GetInstance();
 
-        public MakeupRepository()
-        {
-            db = DatabaseSingleton.GetInstance();
-        }
-
-        public List<Makeup> GetMakeups()
+        public static List<Makeup> GetMakeups()
         {
             List<Makeup> makeups = (from m in db.Makeups orderby m.MakeupBrand.MakeupBrandRating descending select m).ToList();
 
             return makeups;
         }
 
-        public Makeup GetMakeupById(int id)
+        public static Makeup GetMakeupById(int id)
         {
             Makeup makeup = (from m in db.Makeups where m.MakeupID == id select m).FirstOrDefault();
 
             return makeup;
         }
 
-        public void AddMakeup(Makeup makeup)
+        public static void AddMakeup(Makeup makeup)
         {
             if (makeup == null) { return; }
 
@@ -38,7 +33,7 @@ namespace MakeMeUpzz.Repository
             db.SaveChanges();
         }
 
-        public void DeleteMakeup(Makeup makeup)
+        public static void DeleteMakeup(Makeup makeup)
         {
             if (makeup == null) { return; }
             
@@ -46,31 +41,31 @@ namespace MakeMeUpzz.Repository
             db.SaveChanges();
         }
 
-        public List<MakeupType> GetMakeupTypes()
+        public static List<MakeupType> GetMakeupTypes()
         {
             List<MakeupType> types = (from t in db.MakeupTypes select t).ToList();
 
             return types;
         }
 
-        public List<MakeupBrand> GetMakeupBrands()
+        public static List<MakeupBrand> GetMakeupBrands()
         {
             List<MakeupBrand> brands = (from b in db.MakeupBrands select b).ToList();
 
             return brands;
         }
 
-        public int GetMakeupTypeIDByName(string name)
+        public static int GetMakeupTypeIDByName(string name)
         {
             return (from t in db.MakeupTypes where t.MakeupTypeName.Equals(name) select t.MakeupTypeID).FirstOrDefault();
         }
 
-        public int GetMakeupBrandIDByName(string name)
+        public static int GetMakeupBrandIDByName(string name)
         {
             return (from b in db.MakeupBrands where b.MakeupBrandName.Equals(name) select b.MakeupBrandID).FirstOrDefault();
         }
 
-        public int GetLastID()
+        public static int GetLastID()
         {
             int id = Convert.ToInt32((from m in db.Makeups select m.MakeupID).ToList().LastOrDefault());
 

@@ -10,10 +10,9 @@ namespace MakeMeUpzz.Controller
 {
     public class LoginController
     {
-        UserHandler userHandler;
         public LoginController()
         {
-            this.userHandler = new UserHandler();
+            
         }
 
         private void RedirecttoHome(HttpResponse response, HttpSessionState session, string username)
@@ -31,7 +30,7 @@ namespace MakeMeUpzz.Controller
 
             string username = cookie.Value;
 
-            User user = userHandler.GetUser(username);
+            User user = UserHandler.GetUser(username);
 
             if (user == null) { return; }
 
@@ -67,7 +66,7 @@ namespace MakeMeUpzz.Controller
             if (!CheckUsername(username, usernameErrorLbl)) { validInput = false; }
             if (!CheckPassword(password, passwordErrorLbl)) { validInput = false; }
 
-            bool isAuthenticated = userHandler.Authenticate(username, password);
+            bool isAuthenticated = UserHandler.Authenticate(username, password);
             if (!isAuthenticated) { loginErrorLbl.Text = "Username or password is incorrect."; validInput = false; }
 
             if (!validInput) { return; }

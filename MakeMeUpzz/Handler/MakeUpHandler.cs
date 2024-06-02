@@ -11,38 +11,32 @@ namespace MakeMeUpzz.Handler
 {
     public class MakeUpHandler
     {
-        private MakeupRepository repository;
 
-        public MakeUpHandler()
+        public static List<Makeup> GetMakeups()
         {
-            this.repository = new MakeupRepository();
+            return MakeupRepository.GetMakeups();
         }
 
-        public List<Makeup> GetMakeups()
+        public static void DeleteMakeupByID(int id)
         {
-            return repository.GetMakeups();
+            Makeup toDelete = MakeupRepository.GetMakeupById(id);
+
+            MakeupRepository.DeleteMakeup(toDelete);
         }
 
-        public void DeleteMakeupByID(int id)
+        public static List<MakeupType> GetMakeupTypes()
         {
-            Makeup toDelete = repository.GetMakeupById(id);
-
-            repository.DeleteMakeup(toDelete);
+            return MakeupRepository.GetMakeupTypes();
         }
 
-        public List<MakeupType> GetMakeupTypes()
+        public static List<MakeupBrand> GetMakeupBrands()
         {
-            return repository.GetMakeupTypes();
+            return MakeupRepository.GetMakeupBrands();
         }
 
-        public List<MakeupBrand> GetMakeupBrands()
+        public static List<string> GetMakeupTypeNames()
         {
-            return repository.GetMakeupBrands();
-        }
-
-        public List<string> GetMakeupTypeNames()
-        {
-            List<MakeupType> types = repository.GetMakeupTypes();
+            List<MakeupType> types = MakeupRepository.GetMakeupTypes();
 
             List<string> typeNames = new List<string>();
 
@@ -54,9 +48,9 @@ namespace MakeMeUpzz.Handler
             return typeNames;
         }
 
-        public List<string> GetMakeupBrandNames()
+        public static List<string> GetMakeupBrandNames()
         {
-            List<MakeupBrand> brands = repository.GetMakeupBrands();
+            List<MakeupBrand> brands = MakeupRepository.GetMakeupBrands();
 
             List<string> brandNames = new List<string>();
 
@@ -68,18 +62,18 @@ namespace MakeMeUpzz.Handler
             return brandNames;
         }
 
-        public void AddMakeup(string name, int price, int weight, string typeName, string brandName)
+        public static void AddMakeup(string name, int price, int weight, string typeName, string brandName)
         {
-            int newId = repository.GetLastID() + 1;
+            int newId = MakeupRepository.GetLastID() + 1;
 
-            int typeId = repository.GetMakeupTypeIDByName(typeName);
-            int brandId = repository.GetMakeupBrandIDByName(brandName);
+            int typeId = MakeupRepository.GetMakeupTypeIDByName(typeName);
+            int brandId = MakeupRepository.GetMakeupBrandIDByName(brandName);
 
             MakeupFactory factory = new MakeupFactory();
 
             Makeup newMakeup = factory.CreateMakeup(newId, name, price, weight, typeId, brandId);
 
-            repository.AddMakeup(newMakeup);
+            MakeupRepository.AddMakeup(newMakeup);
         }
     }
 }
