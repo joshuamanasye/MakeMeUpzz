@@ -29,11 +29,9 @@ namespace MakeMeUpzz.Handler
 
         public static void AddCustomer(string username, string email, string gender, DateTime dob, string password)
         {
-            UserFactory userFactory = new UserFactory();
-
             int newID = UserRepository.GetLastID() + 1;
 
-            User newCustomer = userFactory.CreateUser(newID, username, email, gender, dob, password, "customer");
+            User newCustomer = UserFactory.CreateUser(newID, username, email, gender, dob, password, "customer");
 
             UserRepository.AddUser(newCustomer);
         }

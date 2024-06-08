@@ -98,6 +98,7 @@
     <Content Include="View\Login.aspx" />
     <Content Include="View\Makeup\InsertMakeup.aspx" />
     <Content Include="View\Makeup\ManageMakeup.aspx" />
+    <Content Include="View\Makeup\UpdateMakeup.aspx" />
     <Content Include="View\Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -178,6 +179,13 @@
     </Compile>
     <Compile Include="View\Makeup\ManageMakeup.aspx.designer.cs">
       <DependentUpon>ManageMakeup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Makeup\UpdateMakeup.aspx.cs">
+      <DependentUpon>UpdateMakeup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Makeup\UpdateMakeup.aspx.designer.cs">
+      <DependentUpon>UpdateMakeup.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

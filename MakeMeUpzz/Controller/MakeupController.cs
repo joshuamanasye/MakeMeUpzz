@@ -12,12 +12,6 @@ namespace MakeMeUpzz.Controllers
 {
     public class MakeupController
     {
-
-        public MakeupController()
-        {
-            
-        }
-
         public void LoadMakeups(GridView gv)
         {
             gv.DataSource = MakeUpHandler.GetMakeups();
@@ -40,6 +34,18 @@ namespace MakeMeUpzz.Controllers
         {
             LoadTypes(types);
             LoadBrands(brands);
+        }
+
+        public void LoadMakeupDatatoForm(int id,
+            TextBox nameTxt, TextBox priceTxt, TextBox weightTxt, DropDownList typeDdl, DropDownList brandDdl)
+        {
+            Makeup toLoad = MakeupRepository.GetMakeupById(id);
+
+            nameTxt.Text = toLoad.MakeupName;
+            priceTxt.Text = toLoad.MakeupPrice.ToString();
+            weightTxt.Text = toLoad.MakeupWeight.ToString();
+            typeDdl.SelectedValue = toLoad.MakeupType.MakeupTypeName.ToString();
+            brandDdl.SelectedValue = toLoad.MakeupBrand.MakeupBrandName.ToString();
         }
 
         public void DeleteMakeup(GridView gv, GridViewDeleteEventArgs e)
@@ -102,23 +108,47 @@ namespace MakeMeUpzz.Controllers
             return true;
         }
 
-        public void InsertMakeup(string name, string priceStr, string weightStr, string typeName, string brandName,
-            Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl, HttpResponse response)
+        private bool CheckMakeupData(string name, int price, int weight, string typeName, string brandName,
+            Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl)
         {
             bool validInput = true;
 
+            if ( !CheckName(name, nameErrorLbl) ) { validInput = false; }
+            if ( !CheckPrice(price, priceErrorLbl) ) { validInput = false; }
+            if ( !CheckWeight(weight, weightErrorLbl) ) { validInput = false; }
+
+            return validInput;
+        }
+
+        public void InsertMakeup(string name, string priceStr, string weightStr, string typeName, string brandName,
+            Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl, HttpResponse response)
+        {
             int price = ToInt(priceStr);
             int weight = ToInt(weightStr);
 
-            if (!CheckName(name, nameErrorLbl)) { validInput = false; }
-            if (!CheckPrice(price, priceErrorLbl)) { validInput = false; }
-            if (!CheckWeight(weight, weightErrorLbl)) { validInput = false; }
-
-            if (!validInput) { return; }
+            if ( !CheckMakeupData(name, price, weight, typeName, brandName,nameErrorLbl, priceErrorLbl, weightErrorLbl) ) { return; }
 
             MakeUpHandler.AddMakeup(name, price, weight, typeName, brandName);
 
             response.Redirect("ManageMakeup.aspx");
+        }
+
+        public void UpdateMakeup(int id, string name, string priceStr, string weightStr, string typeName, string brandName,
+            Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl, HttpResponse response)
+        {
+            int price = ToInt(priceStr);
+            int weight = ToInt(weightStr);
+
+            if ( !CheckMakeupData(name, price, weight, typeName, brandName, nameErrorLbl, priceErrorLbl, weightErrorLbl) ) { return; }
+
+            MakeUpHandler.UpdateMakeupByID(id, name, price, weight, typeName, brandName);
+
+            response.Redirect("ManageMakeup.aspx");
+        }
+
+        public void RedirectToUpdateMakeup(int id, HttpResponse response)
+        {
+            response.Redirect("UpdateMakeup.aspx?id=" + id);
         }
     }
 }

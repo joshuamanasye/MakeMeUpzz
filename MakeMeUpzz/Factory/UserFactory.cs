@@ -8,9 +8,7 @@ namespace MakeMeUpzz.Factory
 {
     public class UserFactory
     {
-        public UserFactory() { }
-
-        public User CreateUser(int id, string username, string email, string gender, DateTime dob, string password, string role)
+        public static User CreateUser(int id, string username, string email, string gender, DateTime dob, string password, string role)
         {
             User newUser = new User
             {

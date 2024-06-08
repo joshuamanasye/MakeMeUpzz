@@ -69,11 +69,18 @@ namespace MakeMeUpzz.Handler
             int typeId = MakeupRepository.GetMakeupTypeIDByName(typeName);
             int brandId = MakeupRepository.GetMakeupBrandIDByName(brandName);
 
-            MakeupFactory factory = new MakeupFactory();
-
-            Makeup newMakeup = factory.CreateMakeup(newId, name, price, weight, typeId, brandId);
+            Makeup newMakeup = MakeupFactory.CreateMakeup(newId, name, price, weight, typeId, brandId);
 
             MakeupRepository.AddMakeup(newMakeup);
+        }
+
+        public static void UpdateMakeupByID(int id, string name, int price, int weight, string typeName, string brandName)
+        {
+            Makeup toUpdate = MakeupRepository.GetMakeupById(id);
+            int typeId = MakeupRepository.GetMakeupTypeIDByName(typeName);
+            int brandId = MakeupRepository.GetMakeupBrandIDByName(brandName);
+
+            MakeupRepository.UpdateMakeup(toUpdate, name, price, weight, typeId, brandId);
         }
     }
 }

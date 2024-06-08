@@ -1,7 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Web.Master" AutoEventWireup="true" CodeBehind="ManageMakeup.aspx.cs" Inherits="MakeMeUpzz.View.ManageMakeup" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Manage Makeup</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h1>Manage Makeup</h1>
+
     <asp:GridView ID="MakeupGV" runat="server" OnRowEditing="MakeupGV_RowEditing" OnRowDeleting="MakeupGV_RowDeleting" AutoGenerateColumns="False">
         <Columns>
             <asp:BoundField DataField="MakeupID" HeaderText="ID" SortExpression="MakeupID" />

@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Web.Master" AutoEventWireup="true" CodeBehind="InsertMakeup.aspx.cs" Inherits="MakeMeUpzz.View.Makeup.InsertMakeup" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Web.Master" AutoEventWireup="true" CodeBehind="UpdateMakeup.aspx.cs" Inherits="MakeMeUpzz.View.Makeup.UpdateMakeup" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Insert Makeup</title>
+    <title>Update Makeup</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Insert Makeup</h1>
+    <h1>Update Makeup</h1>
 
     <a href="ManageMakeup.aspx"><< Back</a>
 
@@ -31,6 +31,6 @@
         <asp:DropDownList ID="BrandDdl" runat="server"></asp:DropDownList>
     </div>
     <div class="inputRow">
-        <asp:Button ID="InsertBtn" runat="server" Text="Insert" OnClick="InsertBtn_Click" />
+        <asp:Button ID="UpdateBtn" runat="server" Text="Update" OnClick="UpdateBtn_Click"/>
     </div>
 </asp:Content>

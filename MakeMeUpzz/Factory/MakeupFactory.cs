@@ -8,9 +8,7 @@ namespace MakeMeUpzz.Factory
 {
     public class MakeupFactory
     {
-        public MakeupFactory() { }
-
-        public Makeup CreateMakeup(int id, string name, int price, int weight, int typeId, int brandId)
+        public static Makeup CreateMakeup(int id, string name, int price, int weight, int typeId, int brandId)
         {
             Makeup newMakup = new Makeup
             {

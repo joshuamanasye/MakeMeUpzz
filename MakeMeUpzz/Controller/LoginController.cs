@@ -59,7 +59,9 @@ namespace MakeMeUpzz.Controller
             passwordErrorLbl.Text = string.Empty;
             return true;
         }
-        public void DoLogin(string username, string password, bool remember, Label usernameErrorLbl, Label passwordErrorLbl, Label loginErrorLbl, HttpResponse response, HttpSessionState session)
+        public void DoLogin(string username, string password, bool remember,
+            Label usernameErrorLbl, Label passwordErrorLbl, Label loginErrorLbl,
+            HttpResponse response, HttpSessionState session)
         {
             bool validInput = true;
 
@@ -76,6 +78,7 @@ namespace MakeMeUpzz.Controller
                 HttpCookie cookie = new HttpCookie("username", username)
                 {
                     Expires = DateTime.Now.AddMinutes(2)
+                    //Expires = DateTime.Now.AddHours(1)
                 };
                 response.Cookies.Add(cookie);
             }

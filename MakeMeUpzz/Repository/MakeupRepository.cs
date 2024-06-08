@@ -33,6 +33,17 @@ namespace MakeMeUpzz.Repository
             db.SaveChanges();
         }
 
+        public static void UpdateMakeup(Makeup makeup, string name, int price, int weight, int typeId, int brandId)
+        {
+            makeup.MakeupName = name;
+            makeup.MakeupPrice = price;
+            makeup.MakeupWeight = weight;
+            makeup.MakeupTypeID = typeId;
+            makeup.MakeupBrandID = brandId;
+
+            db.SaveChanges();
+        }
+
         public static void DeleteMakeup(Makeup makeup)
         {
             if (makeup == null) { return; }
