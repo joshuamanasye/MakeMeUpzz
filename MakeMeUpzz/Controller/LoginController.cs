@@ -73,8 +73,10 @@ namespace MakeMeUpzz.Controller
 
             if (remember)
             {
-                HttpCookie cookie = new HttpCookie("username", username);
-                cookie.Expires = DateTime.Now.AddMinutes(2);
+                HttpCookie cookie = new HttpCookie("username", username)
+                {
+                    Expires = DateTime.Now.AddMinutes(2)
+                };
                 response.Cookies.Add(cookie);
             }
 

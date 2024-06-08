@@ -24,67 +24,67 @@ namespace MakeMeUpzz.View
         protected global::System.Web.UI.HtmlControls.HtmlForm loginForm;
 
         /// <summary>
-        /// formImg control.
+        /// FormImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image formImg;
+        protected global::System.Web.UI.WebControls.Image FormImg;
 
         /// <summary>
-        /// usernameLbl control.
+        /// UsernameLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label usernameLbl;
+        protected global::System.Web.UI.WebControls.Label UsernameLbl;
 
         /// <summary>
-        /// usernameTxt control.
+        /// UsernameTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox usernameTxt;
+        protected global::System.Web.UI.WebControls.TextBox UsernameTxt;
 
         /// <summary>
-        /// usernameErrorLbl control.
+        /// UsernameErrorLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label usernameErrorLbl;
+        protected global::System.Web.UI.WebControls.Label UsernameErrorLbl;
 
         /// <summary>
-        /// emailLbl control.
+        /// EmailLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailLbl;
+        protected global::System.Web.UI.WebControls.Label EmailLbl;
 
         /// <summary>
-        /// emailTxt control.
+        /// EmailTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailTxt;
+        protected global::System.Web.UI.WebControls.TextBox EmailTxt;
 
         /// <summary>
-        /// emailErrorLbl control.
+        /// EmailErrorLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailErrorLbl;
+        protected global::System.Web.UI.WebControls.Label EmailErrorLbl;
 
         /// <summary>
         /// GenderLbl control.
@@ -96,111 +96,111 @@ namespace MakeMeUpzz.View
         protected global::System.Web.UI.WebControls.Label GenderLbl;
 
         /// <summary>
-        /// genderRB control.
+        /// GenderRB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList genderRB;
+        protected global::System.Web.UI.WebControls.RadioButtonList GenderRB;
 
         /// <summary>
-        /// genderErrorLbl control.
+        /// GenderErrorLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label genderErrorLbl;
+        protected global::System.Web.UI.WebControls.Label GenderErrorLbl;
 
         /// <summary>
-        /// dobLbl control.
+        /// DobLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dobLbl;
+        protected global::System.Web.UI.WebControls.Label DobLbl;
 
         /// <summary>
-        /// dobCalendar control.
+        /// DobCalendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar dobCalendar;
+        protected global::System.Web.UI.WebControls.Calendar DobCalendar;
 
         /// <summary>
-        /// dobErrorLbl control.
+        /// DobErrorLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dobErrorLbl;
+        protected global::System.Web.UI.WebControls.Label DobErrorLbl;
 
         /// <summary>
-        /// passwordLbl control.
+        /// PasswordLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwordLbl;
+        protected global::System.Web.UI.WebControls.Label PasswordLbl;
 
         /// <summary>
-        /// passwordTxt control.
+        /// PasswordTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passwordTxt;
+        protected global::System.Web.UI.WebControls.TextBox PasswordTxt;
 
         /// <summary>
-        /// passwordErrorLbl control.
+        /// PasswordErrorLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwordErrorLbl;
+        protected global::System.Web.UI.WebControls.Label PasswordErrorLbl;
 
         /// <summary>
-        /// passwordConfirmLbl control.
+        /// PasswordConfirmLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwordConfirmLbl;
+        protected global::System.Web.UI.WebControls.Label PasswordConfirmLbl;
 
         /// <summary>
-        /// passwordConfirmTxt control.
+        /// PasswordConfirmTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passwordConfirmTxt;
+        protected global::System.Web.UI.WebControls.TextBox PasswordConfirmTxt;
 
         /// <summary>
-        /// passwordConfirmErrorLbl control.
+        /// PasswordConfirmErrorLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwordConfirmErrorLbl;
+        protected global::System.Web.UI.WebControls.Label PasswordConfirmErrorLbl;
 
         /// <summary>
-        /// registerBtn control.
+        /// RegisterBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button registerBtn;
+        protected global::System.Web.UI.WebControls.Button RegisterBtn;
     }
 }

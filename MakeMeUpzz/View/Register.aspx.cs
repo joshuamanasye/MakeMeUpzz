@@ -17,18 +17,18 @@ namespace MakeMeUpzz.View
             controller = new RegisterController();
         }
 
-        protected void registerBtn_Click(object sender, EventArgs e)
+        protected void RegisterBtn_Click(object sender, EventArgs e)
         {
-            string username = usernameTxt.Text;
-            string email = emailTxt.Text;
-            string gender = genderRB.SelectedValue;
-            DateTime dob = dobCalendar.SelectedDate;
-            string password = passwordTxt.Text;
-            string passwordConfirm = passwordConfirmTxt.Text;
+            string username = UsernameTxt.Text;
+            string email = EmailTxt.Text;
+            string gender = GenderRB.SelectedValue;
+            DateTime dob = DobCalendar.SelectedDate;
+            string password = PasswordTxt.Text;
+            string passwordConfirm = PasswordConfirmTxt.Text;
 
             controller.DoRegister(username, email, gender, dob,
-                password, passwordConfirm, usernameErrorLbl, emailErrorLbl,
-                genderErrorLbl, dobErrorLbl, passwordErrorLbl, passwordConfirmErrorLbl,
+                password, passwordConfirm, UsernameErrorLbl, EmailErrorLbl,
+                GenderErrorLbl, DobErrorLbl, PasswordErrorLbl, PasswordConfirmErrorLbl,
                 Response);
         }
     }

@@ -21,15 +21,15 @@ namespace MakeMeUpzz.View
 
             if (IsPostBack) { return; }
 
-            controller.LoadMakeups(makeupGV);
+            controller.LoadMakeups(MakeupGV);
         }
 
-        protected void makeupGV_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void MakeupGV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            controller.DeleteMakeup(makeupGV, e);
+            controller.DeleteMakeup(MakeupGV, e);
         }
 
-        protected void makeupGV_RowEditing(object sender, GridViewEditEventArgs e)
+        protected void MakeupGV_RowEditing(object sender, GridViewEditEventArgs e)
         {
 
         }

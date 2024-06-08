@@ -12,15 +12,16 @@ namespace MakeMeUpzz.Factory
 
         public User CreateUser(int id, string username, string email, string gender, DateTime dob, string password, string role)
         {
-            User newUser = new User();
-
-            newUser.UserID = id;
-            newUser.Username = username;
-            newUser.UserEmail = email;
-            newUser.UserGender = gender;
-            newUser.UserDOB = dob;
-            newUser.UserPassword = password;
-            newUser.UserRole = role;
+            User newUser = new User
+            {
+                UserID = id,
+                Username = username,
+                UserEmail = email,
+                UserGender = gender,
+                UserDOB = dob,
+                UserPassword = password,
+                UserRole = role
+            };
 
             return newUser;
         }

@@ -81,7 +81,6 @@
       <DependentUpon>DBMakeMeUpzz.mdf</DependentUpon>
     </Content>
     <Content Include="assets\logo.png" />
-    <Content Include="Content\Site.css" />
     <Content Include="Model\DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DBModel.Context.cs</LastGenOutput>

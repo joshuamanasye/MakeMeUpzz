@@ -17,7 +17,7 @@ namespace MakeMeUpzz.View
             
             this.homeController = new HomeController();
 
-            homeController.LoadUser(Response, Session, Request.Cookies["username"], usernameLbl);
+            homeController.LoadUser(Response, Session, Request.Cookies["username"], UsernameLbl);
         }
     }
 }

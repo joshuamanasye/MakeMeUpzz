@@ -18,13 +18,13 @@ namespace MakeMeUpzz.View
             controller.CheckCookie(this);
         }
 
-        protected void loginBtn_Click(object sender, EventArgs e)
+        protected void LoginBtn_Click(object sender, EventArgs e)
         {
-            string username = usernameTxt.Text;
-            string password = passwordTxt.Text;
-            bool remember = rememberChk.Checked;
+            string username = UsernameTxt.Text;
+            string password = PasswordTxt.Text;
+            bool remember = RememberChk.Checked;
 
-            controller.DoLogin(username, password, remember, usernameErrorLbl, passwordErrorLbl, loginErrorLbl, Response, Session);
+            controller.DoLogin(username, password, remember, UsernameErrorLbl, PasswordErrorLbl, LoginErrorLbl, Response, Session);
         }
     }
 }

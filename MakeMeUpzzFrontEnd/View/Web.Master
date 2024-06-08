@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="MakeMeUpzzFrontEnd.View.Web" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <title></title>
+	<link rel="icon" href="~/assets/logo.png" />
+    <link href="~/View/CSS/navbar.css" rel="stylesheet" />
+    <link href="~/View/CSS/master.css" rel="stylesheet" />
+</head>
+<body>
+    <form runat="server">
+        <nav class="solid">
+            <div class="left">
+                <div class="nav-item current-page">
+                    <a href="index.html">
+                        <p>Home</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="middle">
+                <div class="nav-item custNav">
+                    <a href="">
+                        <p>Order Makeup</p>
+                    </a>
+                </div>
+                <div class="nav-item custNav">
+                    <a href="">
+                        <p>History</p>
+                    </a>
+                </div>
+                <div class="nav-item custNav">
+                    <a href="">
+                        <p>Profile</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="nav-item">
+                    <asp:Button ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />
+                </div>
+            </div>
+        </nav>
+    
+
+        <main>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+    </form>
+</body>
+</html>

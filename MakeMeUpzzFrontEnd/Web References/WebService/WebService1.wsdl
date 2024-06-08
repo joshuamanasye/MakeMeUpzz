@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authenticate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuthenticateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dob" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCustomerResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMakeups">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMakeupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMakeupsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMakeupByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMakeupByIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMakeupTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMakeupTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMakeupTypesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMakeupBrands">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMakeupBrandsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMakeupBrandsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMakeupTypeNames">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMakeupTypeNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMakeupTypeNamesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMakeupBrandNames">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMakeupBrandNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMakeupBrandNamesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMakeup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="typeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="brandName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMakeupResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateSoapIn">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCustomer" />
+  </wsdl:message>
+  <wsdl:message name="AddCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMakeupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMakeups" />
+  </wsdl:message>
+  <wsdl:message name="GetMakeupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMakeupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMakeupByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMakeupByID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMakeupByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMakeupByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMakeupTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMakeupTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetMakeupTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMakeupTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMakeupBrandsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMakeupBrands" />
+  </wsdl:message>
+  <wsdl:message name="GetMakeupBrandsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMakeupBrandsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMakeupTypeNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMakeupTypeNames" />
+  </wsdl:message>
+  <wsdl:message name="GetMakeupTypeNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMakeupTypeNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMakeupBrandNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMakeupBrandNames" />
+  </wsdl:message>
+  <wsdl:message name="GetMakeupBrandNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMakeupBrandNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMakeupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMakeup" />
+  </wsdl:message>
+  <wsdl:message name="AddMakeupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMakeupResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <wsdl:input message="tns:AuthenticateSoapIn" />
+      <wsdl:output message="tns:AuthenticateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <wsdl:input message="tns:AddCustomerSoapIn" />
+      <wsdl:output message="tns:AddCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeups">
+      <wsdl:input message="tns:GetMakeupsSoapIn" />
+      <wsdl:output message="tns:GetMakeupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMakeupByID">
+      <wsdl:input message="tns:DeleteMakeupByIDSoapIn" />
+      <wsdl:output message="tns:DeleteMakeupByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeupTypes">
+      <wsdl:input message="tns:GetMakeupTypesSoapIn" />
+      <wsdl:output message="tns:GetMakeupTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeupBrands">
+      <wsdl:input message="tns:GetMakeupBrandsSoapIn" />
+      <wsdl:output message="tns:GetMakeupBrandsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeupTypeNames">
+      <wsdl:input message="tns:GetMakeupTypeNamesSoapIn" />
+      <wsdl:output message="tns:GetMakeupTypeNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeupBrandNames">
+      <wsdl:input message="tns:GetMakeupBrandNamesSoapIn" />
+      <wsdl:output message="tns:GetMakeupBrandNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMakeup">
+      <wsdl:input message="tns:AddMakeupSoapIn" />
+      <wsdl:output message="tns:AddMakeupSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <soap:operation soapAction="http://tempuri.org/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeups">
+      <soap:operation soapAction="http://tempuri.org/GetMakeups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMakeupByID">
+      <soap:operation soapAction="http://tempuri.org/DeleteMakeupByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeupTypes">
+      <soap:operation soapAction="http://tempuri.org/GetMakeupTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeupBrands">
+      <soap:operation soapAction="http://tempuri.org/GetMakeupBrands" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeupTypeNames">
+      <soap:operation soapAction="http://tempuri.org/GetMakeupTypeNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeupBrandNames">
+      <soap:operation soapAction="http://tempuri.org/GetMakeupBrandNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMakeup">
+      <soap:operation soapAction="http://tempuri.org/AddMakeup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="http://tempuri.org/Authenticate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <soap12:operation soapAction="http://tempuri.org/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeups">
+      <soap12:operation soapAction="http://tempuri.org/GetMakeups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMakeupByID">
+      <soap12:operation soapAction="http://tempuri.org/DeleteMakeupByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeupTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetMakeupTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeupBrands">
+      <soap12:operation soapAction="http://tempuri.org/GetMakeupBrands" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeupTypeNames">
+      <soap12:operation soapAction="http://tempuri.org/GetMakeupTypeNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMakeupBrandNames">
+      <soap12:operation soapAction="http://tempuri.org/GetMakeupBrandNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMakeup">
+      <soap12:operation soapAction="http://tempuri.org/AddMakeup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44341/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44341/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

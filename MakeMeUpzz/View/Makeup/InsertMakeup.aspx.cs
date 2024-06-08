@@ -19,18 +19,18 @@ namespace MakeMeUpzz.View.Makeup
 
             if (IsPostBack) { return; }
 
-            controller.LoadMakeupDDL(typeDdl, brandDdl);
+            controller.LoadMakeupDDL(TypeDdl, BrandDdl);
         }
 
-        protected void insertBtn_Click(object sender, EventArgs e)
+        protected void InsertBtn_Click(object sender, EventArgs e)
         {
-            string name = nameTxt.Text;
-            string price = priceTxt.Text;
-            string weight = weightTxt.Text;
-            string typeName = typeDdl.SelectedValue;
-            string brandName = brandDdl.SelectedValue;
+            string name = NameTxt.Text;
+            string price = PriceTxt.Text;
+            string weight = WeightTxt.Text;
+            string typeName = TypeDdl.SelectedValue;
+            string brandName = BrandDdl.SelectedValue;
 
-            controller.InsertMakeup(name, price, weight, typeName, brandName, nameErrorLbl, priceErrorLbl, weightErrorLbl, Response);
+            controller.InsertMakeup(name, price, weight, typeName, brandName, NameErrorLbl, PriceErrorLbl, WeightErrorLbl, Response);
         }
     }
 }

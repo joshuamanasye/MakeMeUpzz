@@ -15,129 +15,129 @@ namespace MakeMeUpzz.View.Makeup
     {
 
         /// <summary>
-        /// nameLbl control.
+        /// NameLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nameLbl;
+        protected global::System.Web.UI.WebControls.Label NameLbl;
 
         /// <summary>
-        /// nameTxt control.
+        /// NameTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nameTxt;
+        protected global::System.Web.UI.WebControls.TextBox NameTxt;
 
         /// <summary>
-        /// nameErrorLbl control.
+        /// NameErrorLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nameErrorLbl;
+        protected global::System.Web.UI.WebControls.Label NameErrorLbl;
 
         /// <summary>
-        /// priceLbl control.
+        /// PriceLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label priceLbl;
+        protected global::System.Web.UI.WebControls.Label PriceLbl;
 
         /// <summary>
-        /// priceTxt control.
+        /// PriceTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox priceTxt;
+        protected global::System.Web.UI.WebControls.TextBox PriceTxt;
 
         /// <summary>
-        /// priceErrorLbl control.
+        /// PriceErrorLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label priceErrorLbl;
+        protected global::System.Web.UI.WebControls.Label PriceErrorLbl;
 
         /// <summary>
-        /// weightLbl control.
+        /// WeightLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label weightLbl;
+        protected global::System.Web.UI.WebControls.Label WeightLbl;
 
         /// <summary>
-        /// weightTxt control.
+        /// WeightTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox weightTxt;
+        protected global::System.Web.UI.WebControls.TextBox WeightTxt;
 
         /// <summary>
-        /// weightErrorLbl control.
+        /// WeightErrorLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label weightErrorLbl;
+        protected global::System.Web.UI.WebControls.Label WeightErrorLbl;
 
         /// <summary>
-        /// typeLbl control.
+        /// TypeLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label typeLbl;
+        protected global::System.Web.UI.WebControls.Label TypeLbl;
 
         /// <summary>
-        /// typeDdl control.
+        /// TypeDdl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList typeDdl;
+        protected global::System.Web.UI.WebControls.DropDownList TypeDdl;
 
         /// <summary>
-        /// brandLbl control.
+        /// BrandLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label brandLbl;
+        protected global::System.Web.UI.WebControls.Label BrandLbl;
 
         /// <summary>
-        /// brandDdl control.
+        /// BrandDdl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList brandDdl;
+        protected global::System.Web.UI.WebControls.DropDownList BrandDdl;
 
         /// <summary>
-        /// insertBtn control.
+        /// InsertBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button insertBtn;
+        protected global::System.Web.UI.WebControls.Button InsertBtn;
     }
 }
