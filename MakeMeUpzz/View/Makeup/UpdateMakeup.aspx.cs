@@ -22,14 +22,14 @@ namespace MakeMeUpzz.View.Makeup
 
             controller.LoadMakeupDDL(TypeDdl, BrandDdl);
 
-            int id = Convert.ToInt32(Request.QueryString["id"]);
+            int id = controller.RequestID(Request, Response);
 
             controller.LoadMakeupDatatoForm(id, NameTxt, PriceTxt, WeightTxt, TypeDdl, BrandDdl);
         }
 
         protected void UpdateBtn_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Request.QueryString["id"]);
+            int id = Convert.ToInt32(Request.QueryString["ID"]);
             string name = NameTxt.Text;
             string priceStr = PriceTxt.Text;
             string weightStr = WeightTxt.Text;

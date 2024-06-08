@@ -12,6 +12,16 @@ namespace MakeMeUpzz.Controllers
 {
     public class MakeupController
     {
+        private int ToInt(string str)
+        {
+            if (int.TryParse(str, out int number))
+            {
+                return number;
+            }
+
+            return -1;
+        }
+
         public void LoadMakeups(GridView gv)
         {
             gv.DataSource = MakeUpHandler.GetMakeups();
@@ -36,6 +46,27 @@ namespace MakeMeUpzz.Controllers
             LoadBrands(brands);
         }
 
+        private bool CheckValidMakeupByID(int id)
+        {
+            Makeup toCheck = MakeupRepository.GetMakeupById(id);
+
+            if (toCheck == null) { return false; }
+
+            return true;
+        }
+
+        public int RequestID(HttpRequest request, HttpResponse response)
+        {
+            int id = ToInt(request.QueryString["ID"]);
+
+            if( !CheckValidMakeupByID(id) )
+            {
+                response.Redirect("ManageMakeup.aspx");
+            }
+
+            return id;
+        }
+
         public void LoadMakeupDatatoForm(int id,
             TextBox nameTxt, TextBox priceTxt, TextBox weightTxt, DropDownList typeDdl, DropDownList brandDdl)
         {
@@ -55,15 +86,6 @@ namespace MakeMeUpzz.Controllers
             MakeUpHandler.DeleteMakeupByID(id);
 
             LoadMakeups(gv);
-        }
-
-        private int ToInt(string str)
-        {
-            if (int.TryParse(str, out int number)) {
-                return number;
-            }
-
-            return -1;
         }
 
         private bool CheckName(string name, Label nameErrorLbl)
@@ -148,7 +170,7 @@ namespace MakeMeUpzz.Controllers
 
         public void RedirectToUpdateMakeup(int id, HttpResponse response)
         {
-            response.Redirect("UpdateMakeup.aspx?id=" + id);
+            response.Redirect("UpdateMakeup.aspx?ID=" + id);
         }
     }
 }
