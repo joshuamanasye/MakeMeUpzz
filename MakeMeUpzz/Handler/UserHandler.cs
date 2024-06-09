@@ -27,6 +27,11 @@ namespace MakeMeUpzz.Handler
             return UserRepository.GetUser(username);
         }
 
+        public static List<User> GetUserByRole(string role)
+        {
+            return UserRepository.GetUserByRole(role);
+        }
+
         public static void AddCustomer(string username, string email, string gender, DateTime dob, string password)
         {
             int newID = UserRepository.GetLastID() + 1;

@@ -11,13 +11,14 @@ namespace MakeMeUpzz.View
     public partial class Home : System.Web.UI.Page
     {
         private HomeController homeController;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack) { return; }
-            
             this.homeController = new HomeController();
 
-            homeController.LoadUser(Response, Session, Request.Cookies["username"], UsernameLbl);
+            if (IsPostBack) { return; }
+
+            homeController.LoadHomePageData(Session, UsernameLbl, RoleLbl, CustomerGV);
         }
     }
 }

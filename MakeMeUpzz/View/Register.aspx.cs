@@ -10,11 +10,11 @@ namespace MakeMeUpzz.View
 {
     public partial class Register : System.Web.UI.Page
     {
-        RegisterController controller;
+        UserController controller;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            controller = new RegisterController();
+            controller = new UserController();
         }
 
         protected void RegisterBtn_Click(object sender, EventArgs e)

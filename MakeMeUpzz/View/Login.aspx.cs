@@ -10,10 +10,10 @@ namespace MakeMeUpzz.View
 {
     public partial class Login : System.Web.UI.Page
     {
-        private LoginController controller;
+        private UserController controller;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.controller = new LoginController();
+            this.controller = new UserController();
 
             controller.CheckCookie(this);
         }

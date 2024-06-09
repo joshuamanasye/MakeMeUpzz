@@ -8,45 +8,63 @@
     </asp:ContentPlaceHolder>
     <title></title>
 	<link rel="icon" href="~/assets/logo.png" />
-    <link href="~/View/CSS/navbar.css" rel="stylesheet" />
-    <link href="~/View/CSS/master.css" rel="stylesheet" />
+    <link href="/View/CSS/navbar.css" rel="stylesheet" />
+    <link href="/View/CSS/master.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
         <nav class="solid">
             <div class="left">
-                <div class="nav-item current-page">
-                    <a href="index.html">
+                <div class="nav-item">
+                    <a href="/View/Home.aspx">
                         <p>Home</p>
                     </a>
                 </div>
             </div>
 
-            <div class="middle">
-                <div class="nav-item custNav">
-                    <a href="">
-                        <p>Order Makeup</p>
-                    </a>
-                </div>
-                <div class="nav-item custNav">
-                    <a href="">
+            <%-- Customer --%>
+            <div id="CustNav" class="middle" runat="server">
+                <div class="nav-item">
+                    <a href="/View/History.aspx">
                         <p>History</p>
                     </a>
                 </div>
-                <div class="nav-item custNav">
-                    <a href="">
+                <div class="nav-item">
+                    <a href="/View/Profile.aspx">
                         <p>Profile</p>
+                    </a>
+                </div>
+            </div>
+            <%-- Admin --%>
+            <div id="AdminNav" class="middle" runat="server">
+                <div class="nav-item">
+                    <a href="/View/Makeup/ManageMakeup.aspx">
+                        <p>Manage Makeup</p>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="/View/OrderQueue.aspx">
+                        <p>OrderQueue</p>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="/View/Profile.aspx">
+                        <p>Profile</p>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="/View/TransactionReport.aspx">
+                        <p>Transaction Report</p>
                     </a>
                 </div>
             </div>
 
             <div class="right">
                 <div class="nav-item">
-                    <asp:Button ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />
+                    <asp:Button ID="LogoutBtn" runat="server" Text="Logout" OnClick="LogoutBtn_Click" />
                 </div>
             </div>
         </nav>
-    
 
         <main>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

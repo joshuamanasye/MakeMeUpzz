@@ -20,6 +20,11 @@ namespace MakeMeUpzz.Repository
             return (from User in db.Users where User.Username.Equals(username) select User).FirstOrDefault();
         }
 
+        public static List<User> GetUserByRole(string role)
+        {
+            return (from User in db.Users where User.UserRole.Equals(role) select User).ToList();
+        }
+
         public static void AddUser(User user)
         {
             if (user == null) { return; }

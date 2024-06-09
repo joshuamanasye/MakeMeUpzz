@@ -14,9 +14,12 @@ namespace MakeMeUpzz.View
         protected void Page_Load(object sender, EventArgs e)
         {
             this.controller = new MasterController();
+
+            controller.LoadUser(Response, Session, Request.Cookies["username"]);
+            controller.NavVisibility(CustNav, AdminNav, Session);
         }
 
-        protected void logoutBtn_Click(object sender, EventArgs e)
+        protected void LogoutBtn_Click(object sender, EventArgs e)
         {
             controller.DoLogout(Context);
         }

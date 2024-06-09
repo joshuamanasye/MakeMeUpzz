@@ -105,9 +105,8 @@
   <ItemGroup>
     <Compile Include="Controller\MakeupController.cs" />
     <Compile Include="Controller\HomeController.cs" />
-    <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\MasterController.cs" />
-    <Compile Include="Controller\RegisterController.cs" />
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="Factory\MakeupFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\MakeUpHandler.cs" />

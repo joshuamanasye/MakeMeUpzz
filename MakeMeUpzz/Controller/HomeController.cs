@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MakeMeUpzz.Handler;
+using MakeMeUpzz.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,21 +11,27 @@ namespace MakeMeUpzz.Controller
 {
     public class HomeController
     {
-        public HomeController()
+        public void LoadHomePageData(HttpSessionState session, Label usernameLbl, Label roleLbl, GridView customerGV)
         {
+            if (session["username"] == null) { return; }
 
-        }
+            string username = session["username"].ToString();
+            User user = UserHandler.GetUser(username);
 
-        public void LoadUser(HttpResponse response, HttpSessionState session, HttpCookie cookie, Label usernameLbl)
-        {
-            if (session["username"] == null && cookie == null) { response.Redirect("Login.aspx"); }
-            else if (session["username"] == null)
-            {
-                string username = cookie.Value;
-                session["username"] = username;
+            usernameLbl.Text = user.Username;
+            roleLbl.Text = user.UserRole;
+
+            if (user.UserRole.Equals("admin"))
+            {   
+                List<User> users = UserHandler.GetUserByRole("customer");
+
+                customerGV.DataSource = users;
+                customerGV.DataBind();
             }
-
-            usernameLbl.Text = session["username"].ToString();
+            else
+            {
+                customerGV.Visible = false;
+            }
         }
     }
 }
