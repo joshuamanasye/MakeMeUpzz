@@ -98,6 +98,7 @@
     <Content Include="View\Login.aspx" />
     <Content Include="View\Makeup\InsertMakeup.aspx" />
     <Content Include="View\Makeup\ManageMakeup.aspx" />
+    <Content Include="View\Makeup\OrderMakeup.aspx" />
     <Content Include="View\Makeup\UpdateMakeup.aspx" />
     <Content Include="View\Register.aspx" />
     <Content Include="Web.config" />
@@ -107,6 +108,7 @@
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\MasterController.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\MakeupFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\MakeUpHandler.cs" />
@@ -178,6 +180,13 @@
     </Compile>
     <Compile Include="View\Makeup\ManageMakeup.aspx.designer.cs">
       <DependentUpon>ManageMakeup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Makeup\OrderMakeup.aspx.cs">
+      <DependentUpon>OrderMakeup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Makeup\OrderMakeup.aspx.designer.cs">
+      <DependentUpon>OrderMakeup.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Makeup\UpdateMakeup.aspx.cs">
       <DependentUpon>UpdateMakeup.aspx</DependentUpon>

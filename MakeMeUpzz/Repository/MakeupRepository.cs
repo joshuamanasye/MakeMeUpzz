@@ -13,6 +13,13 @@ namespace MakeMeUpzz.Repository
 
         public static List<Makeup> GetMakeups()
         {
+            List<Makeup> makeups = (from m in db.Makeups select m).ToList();
+
+            return makeups;
+        }
+
+        public static List<Makeup> GetMakeupsOrderByBrand()
+        {
             List<Makeup> makeups = (from m in db.Makeups orderby m.MakeupBrand.MakeupBrandRating descending select m).ToList();
 
             return makeups;

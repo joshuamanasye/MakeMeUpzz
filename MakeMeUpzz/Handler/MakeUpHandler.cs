@@ -11,10 +11,14 @@ namespace MakeMeUpzz.Handler
 {
     public class MakeUpHandler
     {
-
         public static List<Makeup> GetMakeups()
         {
             return MakeupRepository.GetMakeups();
+        }
+
+        public static List<Makeup> GetMakeupsOrderByBrand()
+        {
+            return MakeupRepository.GetMakeupsOrderByBrand();
         }
 
         public static void DeleteMakeupByID(int id)

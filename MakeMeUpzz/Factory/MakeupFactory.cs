@@ -8,11 +8,11 @@ namespace MakeMeUpzz.Factory
 {
     public class MakeupFactory
     {
-        public static Makeup CreateMakeup(int id, string name, int price, int weight, int typeId, int brandId)
+        public static Makeup CreateMakeup(int makeupId, string name, int price, int weight, int typeId, int brandId)
         {
             Makeup newMakup = new Makeup
             {
-                MakeupID = id,
+                MakeupID = makeupId,
                 MakeupName = name,
                 MakeupPrice = price,
                 MakeupWeight = weight,

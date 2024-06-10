@@ -15,7 +15,7 @@ namespace MakeMeUpzz.View
         {
             this.controller = new MasterController();
 
-            controller.LoadUser(Response, Session, Request.Cookies["username"]);
+            controller.LoadSession(Response, Session, Request.Cookies["username"]);
             controller.NavVisibility(CustNav, AdminNav, Session);
         }
 

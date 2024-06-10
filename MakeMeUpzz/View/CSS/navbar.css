@@ -21,7 +21,7 @@ nav {
     nav a, .sidebar a {
         display: flex;
         flex-wrap: nowrap;
-        color: #767a7c;
+        color: #454a4e;
         text-decoration: none;
     }
 
@@ -36,7 +36,7 @@ nav {
 
     nav a:hover, .sidebar a:hover {
         text-decoration: none;
-        color: #454a4e;
+        color: #000000;
     }
 
 nav p, .sidebar p {
@@ -65,3 +65,21 @@ nav p, .sidebar p {
     padding: 0 20px;
     transition: 0.1s;
 }
+
+.nav-btn {
+    padding: 0;
+    border: none;
+    background: none;
+    padding: 0 20px;
+    transition: 0.1s;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    white-space: nowrap;
+    color: #454a4e;
+}
+
+    .nav-btn:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: #000000;
+    }

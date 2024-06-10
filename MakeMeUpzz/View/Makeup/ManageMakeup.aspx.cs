@@ -21,7 +21,7 @@ namespace MakeMeUpzz.View
 
             if (IsPostBack) { return; }
 
-            controller.LoadMakeups(MakeupGV);
+            controller.LoadMakeupsOrderByBrand(MakeupGV);
         }
 
         protected void MakeupGV_RowDeleting(object sender, GridViewDeleteEventArgs e)

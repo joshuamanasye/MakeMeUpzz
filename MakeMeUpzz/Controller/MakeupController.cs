@@ -28,6 +28,12 @@ namespace MakeMeUpzz.Controllers
             gv.DataBind();
         }
 
+        public void LoadMakeupsOrderByBrand(GridView gv)
+        {
+            gv.DataSource = MakeUpHandler.GetMakeupsOrderByBrand();
+            gv.DataBind();
+        }
+
         public void LoadTypes(DropDownList ddl)
         {
             ddl.DataSource = MakeUpHandler.GetMakeupTypeNames();

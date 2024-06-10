@@ -12,9 +12,12 @@ namespace MakeMeUpzz.Controller
 {
     public class MasterController
     {
-        public void LoadUser(HttpResponse response, HttpSessionState session, HttpCookie cookie)
+        public void LoadSession(HttpResponse response, HttpSessionState session, HttpCookie cookie)
         {
-            if (session["username"] == null && cookie == null) { response.Redirect("Login.aspx"); }
+            if (session["username"] == null && cookie == null)
+            {
+                response.Redirect("~/View/Login.aspx");
+            }
             else if (session["username"] == null)
             {
                 string username = cookie.Value;
