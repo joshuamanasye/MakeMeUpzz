@@ -1,6 +1,7 @@
 ﻿using MakeMeUpzz.Handler;
 using MakeMeUpzz.Model;
 using MakeMeUpzz.Repository;
+using MakeMeUpzz.Util;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,15 +13,6 @@ namespace MakeMeUpzz.Controllers
 {
     public class MakeupController
     {
-        private int ToInt(string str)
-        {
-            if (int.TryParse(str, out int number))
-            {
-                return number;
-            }
-
-            return -1;
-        }
 
         public void LoadMakeups(GridView gv)
         {
@@ -63,7 +55,7 @@ namespace MakeMeUpzz.Controllers
 
         public int RequestID(HttpRequest request, HttpResponse response)
         {
-            int id = ToInt(request.QueryString["ID"]);
+            int id = UtilConvert.ToInt(request.QueryString["ID"]);
 
             if( !CheckValidMakeupByID(id) )
             {
@@ -151,8 +143,8 @@ namespace MakeMeUpzz.Controllers
         public void InsertMakeup(string name, string priceStr, string weightStr, string typeName, string brandName,
             Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl, HttpResponse response)
         {
-            int price = ToInt(priceStr);
-            int weight = ToInt(weightStr);
+            int price = UtilConvert.ToInt(priceStr);
+            int weight = UtilConvert.ToInt(weightStr);
 
             if ( !CheckMakeupData(name, price, weight, typeName, brandName,nameErrorLbl, priceErrorLbl, weightErrorLbl) ) { return; }
 
@@ -164,8 +156,8 @@ namespace MakeMeUpzz.Controllers
         public void UpdateMakeup(int id, string name, string priceStr, string weightStr, string typeName, string brandName,
             Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl, HttpResponse response)
         {
-            int price = ToInt(priceStr);
-            int weight = ToInt(weightStr);
+            int price = UtilConvert.ToInt(priceStr);
+            int weight = UtilConvert.ToInt(weightStr);
 
             if ( !CheckMakeupData(name, price, weight, typeName, brandName, nameErrorLbl, priceErrorLbl, weightErrorLbl) ) { return; }
 

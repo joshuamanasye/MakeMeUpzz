@@ -8,7 +8,7 @@ namespace MakeMeUpzz.Repository
 {
     public class UserRepository
     {
-        private static DBMakeMeUpzzEntities db = DatabaseSingleton.GetInstance();
+        private static readonly DBMakeMeUpzzEntities db = DatabaseSingleton.GetInstance();
 
         public static List<User> GetUsers()
         {

@@ -9,7 +9,7 @@ namespace MakeMeUpzz.Repository
 {
     public class MakeupRepository
     {
-        private static DBMakeMeUpzzEntities db = DatabaseSingleton.GetInstance();
+        private static readonly DBMakeMeUpzzEntities db = DatabaseSingleton.GetInstance();
 
         public static List<Makeup> GetMakeups()
         {

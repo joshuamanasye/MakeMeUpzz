@@ -25,7 +25,7 @@
             <%-- Customer --%>
             <div id="CustNav" class="middle" runat="server">
                 <div class="nav-item">
-                    <a href="/View/OrderMakeup.aspx">
+                    <a href="/View/Makeup/OrderMakeup.aspx">
                         <p>Order Makeup</p>
                     </a>
                 </div>
