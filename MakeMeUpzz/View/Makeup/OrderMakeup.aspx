@@ -29,6 +29,7 @@
     <asp:Label ID="OrderLbl" runat="server" Text=""></asp:Label>
 
     <%-- CartGV hanya untuk tes, bukan aplikasi karena tidak ada di soal --%>
+    <h2>Cart</h2>
     <asp:GridView ID="CartGV" runat="server"></asp:GridView>
     
     <asp:Button ID="ClearCartBtn" runat="server" Text="Clear Cart" OnClick="ClearCartBtn_Click" />

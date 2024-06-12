@@ -46,6 +46,8 @@ namespace MakeMeUpzz.View.Makeup
                 cartController.AddToCart(username, makeupID, quantityStr, OrderLbl);
 
                 qtyTxt.Text = string.Empty;
+
+                cartController.LoadCarts(CartGV, Session["username"].ToString()); // Hanya untuk mempermudah, tidak ada di soal
             }
         }
 
@@ -54,6 +56,8 @@ namespace MakeMeUpzz.View.Makeup
             string username = Session["username"].ToString();
 
             cartController.ClearCart(username);
+
+            cartController.LoadCarts(CartGV, Session["username"].ToString()); // Hanya untuk mempermudah, tidak ada di soal
         }
 
         protected void CheckoutBtn_Click(object sender, EventArgs e)
@@ -61,6 +65,8 @@ namespace MakeMeUpzz.View.Makeup
             string username = Session["username"].ToString();
 
             cartController.CheckOut(username);
+
+            cartController.LoadCarts(CartGV, Session["username"].ToString()); // Hanya untuk mempermudah, tidak ada di soal
         }
     }
 }

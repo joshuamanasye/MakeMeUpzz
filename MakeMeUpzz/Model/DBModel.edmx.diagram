@@ -5,20 +5,20 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="454d503d07864c14811648eab2599b00" Name="Diagram1" ZoomLevel="73">
-        <EntityTypeShape EntityType="DBMakeMeUpzzModel.Cart" Width="1.5" PointX="5.625" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMakeMeUpzzModel.MakeupBrand" Width="1.5" PointX="0.5" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMakeMeUpzzModel.Makeup" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMakeMeUpzzModel.MakeupType" Width="1.5" PointX="0.5" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMakeMeUpzzModel.TransactionHeader" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMakeMeUpzzModel.User" Width="1.5" PointX="5.625" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMakeMeUpzzModel.TransactionDetail" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <AssociationConnector Association="DBMakeMeUpzzModel.FK_Carts_Makeups" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMakeMeUpzzModel.FK_Carts_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMakeMeUpzzModel.FK_Makeups_MakeupBrands" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMakeMeUpzzModel.FK_Makeups_MakeupTypes" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMakeMeUpzzModel.FK_TransactionDetails_Makeups" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMakeMeUpzzModel.FK_TransactionDetails_TransactionHeaders" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMakeMeUpzzModel.FK_TransactionHeaders_Users" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.Cart" Width="1.5" PointX="6.5" PointY="6.625" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.MakeupBrand" Width="1.5" PointX="1" PointY="5.375" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.Makeup" Width="1.5" PointX="3.125" PointY="6.375" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.MakeupType" Width="1.5" PointX="1" PointY="7.75" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.TransactionDetail" Width="1.5" PointX="3.125" PointY="3.625" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.TransactionHeader" Width="1.5" PointX="3.125" PointY="0.75" />
+        <EntityTypeShape EntityType="DBMakeMeUpzzModel.User" Width="1.5" PointX="6.625" PointY="0.875" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_Carts_Makeups" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_Carts_Users" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_Makeups_MakeupBrands" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_Makeups_MakeupTypes" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_TransactionDetails_Makeups" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_TransactionDetails_TransactionHeaders" />
+        <AssociationConnector Association="DBMakeMeUpzzModel.FK_TransactionHeaders_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -11,7 +11,7 @@ namespace MakeMeUpzz.View
     public partial class Web : System.Web.UI.MasterPage
     {
         MasterController controller;
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
             this.controller = new MasterController();
 

@@ -25,7 +25,7 @@ namespace MakeMeUpzz.Repository
             if (detail == null) { return; }
 
             db.TransactionDetails.Add(detail);
-            db.SaveChanges(); // TODO ERROR DI SINI PAS MAU CHECKOUT
+            db.SaveChanges();
         }
     }
 }
