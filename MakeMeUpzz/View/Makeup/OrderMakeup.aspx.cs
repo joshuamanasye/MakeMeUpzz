@@ -3,6 +3,7 @@ using MakeMeUpzz.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -18,11 +19,14 @@ namespace MakeMeUpzz.View.Makeup
             makeupController = new MakeupController();
             cartController = new CartController();
 
-            //TODO check if user is customer
+            // TODO check if user is customer
 
             if (IsPostBack) { return; }
 
             makeupController.LoadMakeups(MakeupGV);
+
+            // Hanya untuk mempermudah, tidak ada di soal
+            cartController.LoadCarts(CartGV, Session["username"].ToString());
         }
 
         protected void MakeupGV_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -43,6 +47,20 @@ namespace MakeMeUpzz.View.Makeup
 
                 qtyTxt.Text = string.Empty;
             }
+        }
+
+        protected void ClearCartBtn_Click(object sender, EventArgs e)
+        {
+            string username = Session["username"].ToString();
+
+            cartController.ClearCart(username);
+        }
+
+        protected void CheckoutBtn_Click(object sender, EventArgs e)
+        {
+            string username = Session["username"].ToString();
+
+            cartController.CheckOut(username);
         }
     }
 }

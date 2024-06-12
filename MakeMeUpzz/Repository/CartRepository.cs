@@ -10,30 +10,27 @@ namespace MakeMeUpzz.Repository
     {
         private static readonly DBMakeMeUpzzEntities db = DatabaseSingleton.GetInstance();
 
-        public static List<Cart> GetCartsByUserID(int userId)
+        public static List<Cart> GetCartsByUsername(string username)
         {
-            List<Cart> userCarts = (from c in db.Carts where c.UserID == userId select c).ToList();
+            List<Cart> userCarts = (from c
+                                    in db.Carts
+                                    where c.User.Username.Equals(username)
+                                    select c).ToList();
 
             return userCarts;
         }
 
         public static void AddCart(Cart cart)
         {
+            if (cart == null) { return; }
+
             db.Carts.Add(cart);
             db.SaveChanges();
         }
 
-        public static void DeleteCart(Cart cart)
+        public static void DeleteCarts(List<Cart> toDelete)
         {
-            db.Carts.Remove(cart);
-            db.SaveChanges();
-        }
-
-        public static void DeleteCartsByUserID(int userID)
-        {
-            List<Cart> userCarts = GetCartsByUserID(userID);
-
-            db.Carts.RemoveRange(userCarts);
+            db.Carts.RemoveRange(toDelete);
             db.SaveChanges();
         }
 

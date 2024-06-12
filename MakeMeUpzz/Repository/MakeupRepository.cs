@@ -20,7 +20,11 @@ namespace MakeMeUpzz.Repository
 
         public static List<Makeup> GetMakeupsOrderByBrand()
         {
-            List<Makeup> makeups = (from m in db.Makeups orderby m.MakeupBrand.MakeupBrandRating descending select m).ToList();
+            List<Makeup> makeups = (from m
+                                    in db.Makeups
+                                    orderby m.MakeupBrand.MakeupBrandRating
+                                    descending
+                                    select m).ToList();
 
             return makeups;
         }
@@ -75,12 +79,18 @@ namespace MakeMeUpzz.Repository
 
         public static int GetMakeupTypeIDByName(string name)
         {
-            return (from t in db.MakeupTypes where t.MakeupTypeName.Equals(name) select t.MakeupTypeID).FirstOrDefault();
+            return (from t
+                    in db.MakeupTypes
+                    where t.MakeupTypeName.Equals(name)
+                    select t.MakeupTypeID).FirstOrDefault();
         }
 
         public static int GetMakeupBrandIDByName(string name)
         {
-            return (from b in db.MakeupBrands where b.MakeupBrandName.Equals(name) select b.MakeupBrandID).FirstOrDefault();
+            return (from b
+                    in db.MakeupBrands
+                    where b.MakeupBrandName.Equals(name)
+                    select b.MakeupBrandID).FirstOrDefault();
         }
 
         public static int GetLastID()

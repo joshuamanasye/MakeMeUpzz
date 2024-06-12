@@ -10,6 +10,13 @@ namespace MakeMeUpzz.Handler
 {
     public class CartHandler
     {
+        public static List<Cart> GetCartsByUsername(string username)
+        {
+            List<Cart> carts = CartRepository.GetCartsByUsername(username);
+
+            return carts;
+        }
+
         public static void AddToCart(string username, int makeupId, int quantity)
         {
             User user = UserHandler.GetUser(username);
@@ -19,6 +26,13 @@ namespace MakeMeUpzz.Handler
             Cart newCart = CartFactory.CreateCart(newId, user.UserID, makeupId, quantity);
 
             CartRepository.AddCart(newCart);
+        }
+
+        public static void ClearCartByUsername(string username)
+        {
+            List<Cart> toDelete = CartRepository.GetCartsByUsername(username);
+
+            CartRepository.DeleteCarts(toDelete);
         }
     }
 }

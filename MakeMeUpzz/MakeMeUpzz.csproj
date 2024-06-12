@@ -105,15 +105,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CartController.cs" />
-    <Compile Include="Controller\MakeupController.cs" />
+    <Compile Include="Controller\Makeup\MakeupController.cs" />
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\MasterController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\MakeupFactory.cs" />
+    <Compile Include="Factory\TransactionFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\CartHandler.cs" />
     <Compile Include="Handler\MakeUpHandler.cs" />
+    <Compile Include="Handler\TransactionHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Cart.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
@@ -155,6 +157,8 @@
     <Compile Include="Repository\CartRepository.cs" />
     <Compile Include="Repository\DatabaseSingleton.cs" />
     <Compile Include="Repository\MakeupRepository.cs" />
+    <Compile Include="Repository\Transaction\TransactionDetailRepository.cs" />
+    <Compile Include="Repository\Transaction\TransactionHeaderRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Util\UtilConvert.cs" />
     <Compile Include="View\Home.aspx.cs">

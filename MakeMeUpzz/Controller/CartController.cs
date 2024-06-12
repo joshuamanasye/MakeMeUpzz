@@ -1,4 +1,5 @@
 ﻿using MakeMeUpzz.Handler;
+using MakeMeUpzz.Model;
 using MakeMeUpzz.Util;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,25 @@ namespace MakeMeUpzz.Controller
 
             orderLbl.ForeColor = System.Drawing.Color.Green;
             orderLbl.Text = "Added to cart";
+        }
+
+        public void ClearCart(string username)
+        {
+            CartHandler.ClearCartByUsername(username);
+        }
+
+        public void CheckOut(string username)
+        {
+            TransactionHandler.AddTransaction(username);
+            ClearCart(username);
+        }
+
+        public void LoadCarts(GridView gv, string username)
+        {
+            List<Cart> carts = CartHandler.GetCartsByUsername(username);
+
+            gv.DataSource = carts;
+            gv.DataBind();
         }
     }
 }
