@@ -20,11 +20,29 @@ namespace MakeMeUpzz.Repository
             return userCarts;
         }
 
+        public static Cart GetCart(string username, int makeupId)
+        {
+            Cart cart = (from c
+                         in db.Carts
+                         where c.User.Username.Equals(username) && c.MakeupID == makeupId
+                         select c).FirstOrDefault();
+
+            return cart;
+        }
+
         public static void AddCart(Cart cart)
         {
             if (cart == null) { return; }
 
             db.Carts.Add(cart);
+            db.SaveChanges();
+        }
+
+        public static void UpdateCart(Cart cart, int quantity)
+        {
+            if (cart == null) { return; }
+
+            cart.Quantity = quantity;
             db.SaveChanges();
         }
 

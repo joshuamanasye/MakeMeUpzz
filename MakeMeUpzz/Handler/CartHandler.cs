@@ -21,11 +21,20 @@ namespace MakeMeUpzz.Handler
         {
             User user = UserHandler.GetUser(username);
 
-            int newId = CartRepository.GetLastID() + 1;
+            Cart cart = CartRepository.GetCart(username, makeupId);
 
-            Cart newCart = CartFactory.CreateCart(newId, user.UserID, makeupId, quantity);
+            if (cart != null)
+            {
+                CartRepository.UpdateCart(cart, cart.Quantity + quantity);
+            }
+            else
+            {
+                int newId = CartRepository.GetLastID() + 1;
 
-            CartRepository.AddCart(newCart);
+                Cart newCart = CartFactory.CreateCart(newId, user.UserID, makeupId, quantity);
+
+                CartRepository.AddCart(newCart);
+            }
         }
 
         public static void ClearCartByUsername(string username)
