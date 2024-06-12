@@ -40,5 +40,15 @@ namespace MakeMeUpzz.Handler
 
             UserRepository.AddUser(newCustomer);
         }
+
+        public static void UpdateProfile(int userId, string username, string email, string gender, DateTime dob)
+        {
+            UserRepository.UpdateUser(userId, username, email, gender, dob);
+        }
+
+        public static void UpdatePassword(string username, string password)
+        {
+            UserRepository.UpdatePassword(username, password);
+        }
     }
 }

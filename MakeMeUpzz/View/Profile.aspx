@@ -31,6 +31,10 @@
             <asp:Label CssClass="formErrorLbl" ID="DobErrorLbl" runat="server" Text=""></asp:Label>
         </div>
 
+        <div>
+            <asp:Label ID="ProfileUpdateLbl" runat="server" Text=""></asp:Label>
+        </div>
+
         <asp:Button ID="UpdateBtn" runat="server" Text="Update Profile" OnClick="UpdateBtn_Click" />
     </div>
     
@@ -42,9 +46,13 @@
         </div>
 
         <div class="inputRow">
-            <asp:Label CssClass="formLbl"  ID="NewPasswordConfirmLbl" runat="server" Text="New Password"></asp:Label>
-            <asp:TextBox CssClass="formTxt" ID="NewPasswordConfirmTxt" runat="server" TextMode="Password"></asp:TextBox>
-            <asp:Label CssClass="formErrorLbl" ID="NewPasswordConfirmErrorLbl" runat="server" Text=""></asp:Label>
+            <asp:Label CssClass="formLbl"  ID="NewPasswordLbl" runat="server" Text="New Password"></asp:Label>
+            <asp:TextBox CssClass="formTxt" ID="NewPasswordTxt" runat="server" TextMode="Password"></asp:TextBox>
+            <asp:Label CssClass="formErrorLbl" ID="NewPasswordErrorLbl" runat="server" Text=""></asp:Label>
+        </div>
+
+        <div>
+            <asp:Label ID="PasswordUpdateLbl" runat="server" Text=""></asp:Label>
         </div>
 
         <asp:Button CssClass="formButton" ID="UpdatePasswordBtn" runat="server" Text="Update Password" OnClick="UpdatePasswordBtn_Click" />

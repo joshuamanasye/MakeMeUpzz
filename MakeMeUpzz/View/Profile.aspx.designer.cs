@@ -123,6 +123,15 @@ namespace MakeMeUpzz.View
         protected global::System.Web.UI.WebControls.Label DobErrorLbl;
 
         /// <summary>
+        /// ProfileUpdateLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ProfileUpdateLbl;
+
+        /// <summary>
         /// UpdateBtn control.
         /// </summary>
         /// <remarks>
@@ -159,31 +168,40 @@ namespace MakeMeUpzz.View
         protected global::System.Web.UI.WebControls.Label OldPasswordErrorLbl;
 
         /// <summary>
-        /// NewPasswordConfirmLbl control.
+        /// NewPasswordLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NewPasswordConfirmLbl;
+        protected global::System.Web.UI.WebControls.Label NewPasswordLbl;
 
         /// <summary>
-        /// NewPasswordConfirmTxt control.
+        /// NewPasswordTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NewPasswordConfirmTxt;
+        protected global::System.Web.UI.WebControls.TextBox NewPasswordTxt;
 
         /// <summary>
-        /// NewPasswordConfirmErrorLbl control.
+        /// NewPasswordErrorLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NewPasswordConfirmErrorLbl;
+        protected global::System.Web.UI.WebControls.Label NewPasswordErrorLbl;
+
+        /// <summary>
+        /// PasswordUpdateLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PasswordUpdateLbl;
 
         /// <summary>
         /// UpdatePasswordBtn control.

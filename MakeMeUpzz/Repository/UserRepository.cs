@@ -39,5 +39,28 @@ namespace MakeMeUpzz.Repository
 
             return id;
         }
+
+        public static void UpdateUser(int userId, string username, string email, string gender, DateTime dob)
+        {
+            User toUpdate = (from u in db.Users where u.UserID == userId select u).ToList().FirstOrDefault();
+
+            if (toUpdate == null) { return; }
+
+            toUpdate.Username = username;
+            toUpdate.UserEmail = email;
+            toUpdate.UserGender = gender;
+            toUpdate.UserDOB = dob;
+
+            db.SaveChanges();
+        }
+
+        public static void UpdatePassword(string username, string password)
+        {
+            User toUpdate = GetUser(username);
+
+            toUpdate.UserPassword = password;
+
+            db.SaveChanges();
+        }
     }
 }

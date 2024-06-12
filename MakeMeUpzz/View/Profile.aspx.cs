@@ -23,11 +23,21 @@ namespace MakeMeUpzz.View
             string email = EmailTxt.Text;
             string gender = GenderRB.SelectedValue;
             DateTime dob = DobCalendar.SelectedDate;
+
+            controller.UpdateProfile(Session, username, email, gender, dob,
+                UsernameErrorLbl, EmailErrorLbl, GenderErrorLbl, DobErrorLbl,
+                ProfileUpdateLbl);
+
         }
 
         protected void UpdatePasswordBtn_Click(object sender, EventArgs e)
         {
+            string oldPassword = OldPasswordTxt.Text;
+            string newPassword = NewPasswordTxt.Text;
 
+            controller.UpdatePassword(Session, oldPassword, newPassword,
+                OldPasswordErrorLbl, NewPasswordErrorLbl,
+                PasswordUpdateLbl);
         }
     }
 }
