@@ -59,6 +59,11 @@
                 </div>
                 <div class="nav-item">
                     <a href="/View/Transaction/TransactionList.aspx">
+                        <p>Transaction List</p>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="/View/Report/ViewTransactionReport.aspx">
                         <p>Transaction Report</p>
                     </a>
                 </div>

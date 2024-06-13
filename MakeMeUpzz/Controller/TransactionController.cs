@@ -1,4 +1,5 @@
-﻿using MakeMeUpzz.Handler;
+﻿using MakeMeUpzz.Dataset;
+using MakeMeUpzz.Handler;
 using MakeMeUpzz.Model;
 using MakeMeUpzz.Util;
 using System;
@@ -90,6 +91,44 @@ namespace MakeMeUpzz.Controller
             {
                 response.Redirect("~/View/Home.aspx");
             }
+        }
+
+        private TransactionDataSet MapToDataSet(List<TransactionHeader> transactionHeaders)
+        {
+            TransactionDataSet data = new TransactionDataSet();
+            var headerTable = data.TransactionHeaders;
+            var detailTable = data.TransactionDetails;
+
+            foreach (TransactionHeader th in transactionHeaders)
+            {
+                var hrow = headerTable.NewRow();
+                hrow["TransactionID"] = th.TransactionID;
+                hrow["UserID"] = th.UserID;
+                hrow["TransactionDate"] = th.TransactionDate;
+                hrow["Status"] = th.Status;
+
+                headerTable.Rows.Add(hrow);
+
+                foreach (TransactionDetail td in th.TransactionDetails)
+                {
+                    var drow = detailTable.NewRow();
+                    drow["TransactionID"] = td.TransactionID;
+                    drow["MakeupID"] = td.MakeupID;
+                    drow["Quantity"] = td.Quantity;
+
+                    detailTable.Rows.Add(drow);
+                }
+            }
+
+            return data;
+        }
+
+        public TransactionDataSet GetTransactionReportData()
+        {
+            List<TransactionHeader> transactions = TransactionHandler.GetTransactions();
+
+            return MapToDataSet(transactions);
+
         }
     }
 }

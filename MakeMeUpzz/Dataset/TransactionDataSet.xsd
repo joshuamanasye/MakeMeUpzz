@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TransactionDataSet" targetNamespace="http://tempuri.org/TransactionDataSet.xsd" xmlns:mstns="http://tempuri.org/TransactionDataSet.xsd" xmlns="http://tempuri.org/TransactionDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TransactionDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="TransactionDataSet" msprop:Generator_DataSetName="TransactionDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TransactionHeaders" msprop:Generator_RowEvHandlerName="TransactionHeadersRowChangeEventHandler" msprop:Generator_RowDeletedName="TransactionHeadersRowDeleted" msprop:Generator_RowDeletingName="TransactionHeadersRowDeleting" msprop:Generator_RowEvArgName="TransactionHeadersRowChangeEvent" msprop:Generator_TablePropName="TransactionHeaders" msprop:Generator_RowChangedName="TransactionHeadersRowChanged" msprop:Generator_RowChangingName="TransactionHeadersRowChanging" msprop:Generator_TableClassName="TransactionHeadersDataTable" msprop:Generator_RowClassName="TransactionHeadersRow" msprop:Generator_TableVarName="tableTransactionHeaders" msprop:Generator_UserTableName="TransactionHeaders">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TransactionID" msprop:Generator_ColumnPropNameInRow="TransactionID" msprop:Generator_ColumnPropNameInTable="TransactionIDColumn" msprop:Generator_ColumnVarNameInTable="columnTransactionID" msprop:Generator_UserColumnName="TransactionID" type="xs:string" />
+              <xs:element name="UserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_UserColumnName="UserID" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionDate" msprop:Generator_ColumnPropNameInRow="TransactionDate" msprop:Generator_ColumnPropNameInTable="TransactionDateColumn" msprop:Generator_ColumnVarNameInTable="columnTransactionDate" msprop:Generator_UserColumnName="TransactionDate" type="xs:string" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_UserColumnName="Status" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TransactionDetails" msprop:Generator_RowEvHandlerName="TransactionDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="TransactionDetailsRowDeleted" msprop:Generator_RowDeletingName="TransactionDetailsRowDeleting" msprop:Generator_RowEvArgName="TransactionDetailsRowChangeEvent" msprop:Generator_TablePropName="TransactionDetails" msprop:Generator_RowChangedName="TransactionDetailsRowChanged" msprop:Generator_RowChangingName="TransactionDetailsRowChanging" msprop:Generator_TableClassName="TransactionDetailsDataTable" msprop:Generator_RowClassName="TransactionDetailsRow" msprop:Generator_TableVarName="tableTransactionDetails" msprop:Generator_UserTableName="TransactionDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TransactionID" msprop:Generator_ColumnPropNameInRow="TransactionID" msprop:Generator_ColumnPropNameInTable="TransactionIDColumn" msprop:Generator_ColumnVarNameInTable="columnTransactionID" msprop:Generator_UserColumnName="TransactionID" type="xs:string" />
+              <xs:element name="MakeupID" msprop:Generator_ColumnPropNameInRow="MakeupID" msprop:Generator_ColumnPropNameInTable="MakeupIDColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupID" msprop:Generator_UserColumnName="MakeupID" type="xs:string" />
+              <xs:element name="Quantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_UserColumnName="Quantity" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MakeupTypes" msprop:Generator_RowEvHandlerName="MakeupTypesRowChangeEventHandler" msprop:Generator_RowDeletedName="MakeupTypesRowDeleted" msprop:Generator_RowDeletingName="MakeupTypesRowDeleting" msprop:Generator_RowEvArgName="MakeupTypesRowChangeEvent" msprop:Generator_TablePropName="MakeupTypes" msprop:Generator_RowChangedName="MakeupTypesRowChanged" msprop:Generator_RowChangingName="MakeupTypesRowChanging" msprop:Generator_TableClassName="MakeupTypesDataTable" msprop:Generator_RowClassName="MakeupTypesRow" msprop:Generator_TableVarName="tableMakeupTypes" msprop:Generator_UserTableName="MakeupTypes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MakeupTypeID" msprop:Generator_ColumnPropNameInRow="MakeupTypeID" msprop:Generator_ColumnPropNameInTable="MakeupTypeIDColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupTypeID" msprop:Generator_UserColumnName="MakeupTypeID" type="xs:string" />
+              <xs:element name="MakeupTypeName" msprop:Generator_ColumnPropNameInRow="MakeupTypeName" msprop:Generator_ColumnPropNameInTable="MakeupTypeNameColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupTypeName" msprop:Generator_UserColumnName="MakeupTypeName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MakeupBrands" msprop:Generator_RowEvHandlerName="MakeupBrandsRowChangeEventHandler" msprop:Generator_RowDeletedName="MakeupBrandsRowDeleted" msprop:Generator_RowDeletingName="MakeupBrandsRowDeleting" msprop:Generator_RowEvArgName="MakeupBrandsRowChangeEvent" msprop:Generator_TablePropName="MakeupBrands" msprop:Generator_RowChangedName="MakeupBrandsRowChanged" msprop:Generator_RowChangingName="MakeupBrandsRowChanging" msprop:Generator_TableClassName="MakeupBrandsDataTable" msprop:Generator_RowClassName="MakeupBrandsRow" msprop:Generator_TableVarName="tableMakeupBrands" msprop:Generator_UserTableName="MakeupBrands">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MakeupBrandID" msprop:Generator_ColumnPropNameInRow="MakeupBrandID" msprop:Generator_ColumnPropNameInTable="MakeupBrandIDColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupBrandID" msprop:Generator_UserColumnName="MakeupBrandID" type="xs:string" />
+              <xs:element name="MakeupBrandName" msprop:Generator_ColumnPropNameInRow="MakeupBrandName" msprop:Generator_ColumnPropNameInTable="MakeupBrandNameColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupBrandName" msprop:Generator_UserColumnName="MakeupBrandName" type="xs:string" minOccurs="0" />
+              <xs:element name="MakeupBrandRating" msprop:Generator_ColumnPropNameInRow="MakeupBrandRating" msprop:Generator_ColumnPropNameInTable="MakeupBrandRatingColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupBrandRating" msprop:Generator_UserColumnName="MakeupBrandRating" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Makeups" msprop:Generator_RowEvHandlerName="MakeupsRowChangeEventHandler" msprop:Generator_RowDeletedName="MakeupsRowDeleted" msprop:Generator_RowDeletingName="MakeupsRowDeleting" msprop:Generator_RowEvArgName="MakeupsRowChangeEvent" msprop:Generator_TablePropName="Makeups" msprop:Generator_RowChangedName="MakeupsRowChanged" msprop:Generator_RowChangingName="MakeupsRowChanging" msprop:Generator_TableClassName="MakeupsDataTable" msprop:Generator_RowClassName="MakeupsRow" msprop:Generator_TableVarName="tableMakeups" msprop:Generator_UserTableName="Makeups">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MakeupID" msprop:Generator_ColumnPropNameInRow="MakeupID" msprop:Generator_ColumnPropNameInTable="MakeupIDColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupID" msprop:Generator_UserColumnName="MakeupID" type="xs:string" />
+              <xs:element name="MakeupName" msprop:Generator_ColumnPropNameInRow="MakeupName" msprop:Generator_ColumnPropNameInTable="MakeupNameColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupName" msprop:Generator_UserColumnName="MakeupName" type="xs:string" minOccurs="0" />
+              <xs:element name="MakeupPrice" msprop:Generator_ColumnPropNameInRow="MakeupPrice" msprop:Generator_ColumnPropNameInTable="MakeupPriceColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupPrice" msprop:Generator_UserColumnName="MakeupPrice" type="xs:string" minOccurs="0" />
+              <xs:element name="MakeupWeight" msprop:Generator_ColumnPropNameInRow="MakeupWeight" msprop:Generator_ColumnPropNameInTable="MakeupWeightColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupWeight" msprop:Generator_UserColumnName="MakeupWeight" type="xs:string" minOccurs="0" />
+              <xs:element name="MakeupTypeID" msprop:Generator_ColumnPropNameInRow="MakeupTypeID" msprop:Generator_ColumnPropNameInTable="MakeupTypeIDColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupTypeID" msprop:Generator_UserColumnName="MakeupTypeID" type="xs:string" minOccurs="0" />
+              <xs:element name="MakeupBrandID" msprop:Generator_ColumnPropNameInRow="MakeupBrandID" msprop:Generator_ColumnPropNameInTable="MakeupBrandIDColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupBrandID" msprop:Generator_UserColumnName="MakeupBrandID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Users" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowEvArgName="UsersRowChangeEvent" msprop:Generator_TablePropName="Users" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_RowClassName="UsersRow" msprop:Generator_TableVarName="tableUsers" msprop:Generator_UserTableName="Users">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_UserColumnName="UserID" type="xs:string" />
+              <xs:element name="Username" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_ColumnVarNameInTable="columnUsername" msprop:Generator_UserColumnName="Username" type="xs:string" minOccurs="0" />
+              <xs:element name="UserEmail" msprop:Generator_ColumnPropNameInRow="UserEmail" msprop:Generator_ColumnPropNameInTable="UserEmailColumn" msprop:Generator_ColumnVarNameInTable="columnUserEmail" msprop:Generator_UserColumnName="UserEmail" type="xs:string" minOccurs="0" />
+              <xs:element name="UserDOB" msprop:Generator_ColumnPropNameInRow="UserDOB" msprop:Generator_ColumnPropNameInTable="UserDOBColumn" msprop:Generator_ColumnVarNameInTable="columnUserDOB" msprop:Generator_UserColumnName="UserDOB" type="xs:string" minOccurs="0" />
+              <xs:element name="UserGender" msprop:Generator_ColumnPropNameInRow="UserGender" msprop:Generator_ColumnPropNameInTable="UserGenderColumn" msprop:Generator_ColumnVarNameInTable="columnUserGender" msprop:Generator_UserColumnName="UserGender" type="xs:string" minOccurs="0" />
+              <xs:element name="UserRole" msprop:Generator_ColumnPropNameInRow="UserRole" msprop:Generator_ColumnPropNameInTable="UserRoleColumn" msprop:Generator_ColumnVarNameInTable="columnUserRole" msprop:Generator_UserColumnName="UserRole" type="xs:string" minOccurs="0" />
+              <xs:element name="UserPassword" msprop:Generator_ColumnPropNameInRow="UserPassword" msprop:Generator_ColumnPropNameInTable="UserPasswordColumn" msprop:Generator_ColumnVarNameInTable="columnUserPassword" msprop:Generator_UserColumnName="UserPassword" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Carts" msprop:Generator_RowEvHandlerName="CartsRowChangeEventHandler" msprop:Generator_RowDeletedName="CartsRowDeleted" msprop:Generator_RowDeletingName="CartsRowDeleting" msprop:Generator_RowEvArgName="CartsRowChangeEvent" msprop:Generator_TablePropName="Carts" msprop:Generator_RowChangedName="CartsRowChanged" msprop:Generator_RowChangingName="CartsRowChanging" msprop:Generator_TableClassName="CartsDataTable" msprop:Generator_RowClassName="CartsRow" msprop:Generator_TableVarName="tableCarts" msprop:Generator_UserTableName="Carts">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CartID" msprop:Generator_ColumnPropNameInRow="CartID" msprop:Generator_ColumnPropNameInTable="CartIDColumn" msprop:Generator_ColumnVarNameInTable="columnCartID" msprop:Generator_UserColumnName="CartID" type="xs:string" />
+              <xs:element name="UserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_UserColumnName="UserID" type="xs:string" minOccurs="0" />
+              <xs:element name="MakeupID" msprop:Generator_ColumnPropNameInRow="MakeupID" msprop:Generator_ColumnPropNameInTable="MakeupIDColumn" msprop:Generator_ColumnVarNameInTable="columnMakeupID" msprop:Generator_UserColumnName="MakeupID" type="xs:string" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_UserColumnName="Quantity" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TransactionHeaders" />
+      <xs:field xpath="mstns:TransactionID" />
+    </xs:unique>
+    <xs:unique name="TransactionDetails_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TransactionDetails" />
+      <xs:field xpath="mstns:TransactionID" />
+      <xs:field xpath="mstns:MakeupID" />
+    </xs:unique>
+    <xs:unique name="MakeupTypes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MakeupTypes" />
+      <xs:field xpath="mstns:MakeupTypeID" />
+    </xs:unique>
+    <xs:unique name="MakeupBrands_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MakeupBrands" />
+      <xs:field xpath="mstns:MakeupBrandID" />
+    </xs:unique>
+    <xs:unique name="Makeups_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Makeups" />
+      <xs:field xpath="mstns:MakeupID" />
+    </xs:unique>
+    <xs:unique name="Users_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Users" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+    <xs:unique name="Carts_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Carts" />
+      <xs:field xpath="mstns:CartID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="MakeupBrands_Makeups" msdata:parent="MakeupBrands" msdata:child="Makeups" msdata:parentkey="MakeupBrandID" msdata:childkey="MakeupBrandID" msprop:Generator_UserParentTable="MakeupBrands" msprop:Generator_UserChildTable="Makeups" msprop:Generator_RelationVarName="relationMakeupBrands_Makeups" msprop:Generator_ChildPropName="GetMakeupsRows" msprop:Generator_ParentPropName="MakeupBrandsRow" msprop:Generator_UserRelationName="MakeupBrands_Makeups" />
+      <msdata:Relationship name="Users_TransactionHeaders" msdata:parent="Users" msdata:child="TransactionHeaders" msdata:parentkey="UserID" msdata:childkey="UserID" msprop:Generator_UserParentTable="Users" msprop:Generator_UserChildTable="TransactionHeaders" msprop:Generator_RelationVarName="relationUsers_TransactionHeaders" msprop:Generator_UserRelationName="Users_TransactionHeaders" msprop:Generator_ChildPropName="GetTransactionHeadersRows" msprop:Generator_ParentPropName="UsersRow" />
+      <msdata:Relationship name="TransactionHeaders_TransactionDetails" msdata:parent="TransactionHeaders" msdata:child="TransactionDetails" msdata:parentkey="TransactionID" msdata:childkey="TransactionID" msprop:Generator_UserParentTable="TransactionHeaders" msprop:Generator_UserChildTable="TransactionDetails" msprop:Generator_RelationVarName="relationTransactionHeaders_TransactionDetails" msprop:Generator_ChildPropName="GetTransactionDetailsRows" msprop:Generator_ParentPropName="TransactionHeadersRow" msprop:Generator_UserRelationName="TransactionHeaders_TransactionDetails" />
+      <msdata:Relationship name="MakeupTypes_Makeups" msdata:parent="MakeupTypes" msdata:child="Makeups" msdata:parentkey="MakeupTypeID" msdata:childkey="MakeupTypeID" msprop:Generator_UserParentTable="MakeupTypes" msprop:Generator_UserChildTable="Makeups" msprop:Generator_RelationVarName="relationMakeupTypes_Makeups" msprop:Generator_ChildPropName="GetMakeupsRows" msprop:Generator_ParentPropName="MakeupTypesRow" msprop:Generator_UserRelationName="MakeupTypes_Makeups" />
+      <msdata:Relationship name="Makeups_TransactionDetails" msdata:parent="Makeups" msdata:child="TransactionDetails" msdata:parentkey="MakeupID" msdata:childkey="MakeupID" msprop:Generator_UserParentTable="Makeups" msprop:Generator_UserChildTable="TransactionDetails" msprop:Generator_RelationVarName="relationMakeups_TransactionDetails" msprop:Generator_UserRelationName="Makeups_TransactionDetails" msprop:Generator_ChildPropName="GetTransactionDetailsRows" msprop:Generator_ParentPropName="MakeupsRow" />
+      <msdata:Relationship name="Users_Carts" msdata:parent="Users" msdata:child="Carts" msdata:parentkey="UserID" msdata:childkey="UserID" msprop:Generator_UserParentTable="Users" msprop:Generator_UserChildTable="Carts" msprop:Generator_RelationVarName="relationUsers_Carts" msprop:Generator_ChildPropName="GetCartsRows" msprop:Generator_ParentPropName="UsersRow" msprop:Generator_UserRelationName="Users_Carts" />
+      <msdata:Relationship name="Makeups_Carts" msdata:parent="Makeups" msdata:child="Carts" msdata:parentkey="MakeupID" msdata:childkey="MakeupID" msprop:Generator_UserParentTable="Makeups" msprop:Generator_UserChildTable="Carts" msprop:Generator_RelationVarName="relationMakeups_Carts" msprop:Generator_ChildPropName="GetCartsRows" msprop:Generator_ParentPropName="MakeupsRow" msprop:Generator_UserRelationName="Makeups_Carts" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
