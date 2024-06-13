@@ -29,7 +29,26 @@ namespace MakeMeUpzz.Handler
             }
         }
 
-        // TODO get transaction
+        public static List<TransactionHeader> GetTransactions()
+        {
+            List<TransactionHeader> transactions = TransactionHeaderRepository.GetTransactionHeaders();
+
+            return transactions;
+        }
+
+        public static List <TransactionHeader> GetUserTransactions(int userId)
+        {
+            List<TransactionHeader> userTransaction = TransactionHeaderRepository.GetTransactionheadersByUserID(userId);
+
+            return userTransaction;
+        }
+
+        public static TransactionHeader GetTransaction(int id)
+        {
+            TransactionHeader tran = TransactionHeaderRepository.GetTransactionHeaderById(id);
+
+            return tran;
+        }
 
         public static void HandleTransaction(TransactionHeader header)
         {

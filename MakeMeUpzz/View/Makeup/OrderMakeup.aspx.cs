@@ -23,7 +23,7 @@ namespace MakeMeUpzz.View.Makeup
 
             if (IsPostBack) { return; }
 
-            makeupController.LoadMakeups(MakeupGV);
+            makeupController.LoadMakeupsToGV(MakeupGV);
 
             // Hanya untuk mempermudah, tidak ada di soal
             cartController.LoadCarts(CartGV, Session["username"].ToString());

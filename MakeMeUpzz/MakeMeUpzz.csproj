@@ -102,13 +102,16 @@
     <Content Include="View\Makeup\UpdateMakeup.aspx" />
     <Content Include="View\Profile.aspx" />
     <Content Include="View\Register.aspx" />
+    <Content Include="View\Transaction\TransactionDetail.aspx" />
+    <Content Include="View\Transaction\TransactionList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CartController.cs" />
-    <Compile Include="Controller\Makeup\MakeupController.cs" />
+    <Compile Include="Controller\MakeupController.cs" />
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\MasterController.cs" />
+    <Compile Include="Controller\TransactionController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\MakeupFactory.cs" />
@@ -217,6 +220,20 @@
     </Compile>
     <Compile Include="View\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\TransactionDetail.aspx.cs">
+      <DependentUpon>TransactionDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\TransactionDetail.aspx.designer.cs">
+      <DependentUpon>TransactionDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\TransactionList.aspx.cs">
+      <DependentUpon>TransactionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\TransactionList.aspx.designer.cs">
+      <DependentUpon>TransactionList.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Web.Master.cs">
       <DependentUpon>Web.Master</DependentUpon>

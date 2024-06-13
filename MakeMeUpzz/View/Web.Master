@@ -30,7 +30,7 @@
                     </a>
                 </div>
                 <div class="nav-item">
-                    <a href="/View/History.aspx">
+                    <a href="/View/Transaction/TransactionList.aspx">
                         <p>History</p>
                     </a>
                 </div>
@@ -58,7 +58,7 @@
                     </a>
                 </div>
                 <div class="nav-item">
-                    <a href="/View/TransactionReport.aspx">
+                    <a href="/View/Transaction/TransactionList.aspx">
                         <p>Transaction Report</p>
                     </a>
                 </div>

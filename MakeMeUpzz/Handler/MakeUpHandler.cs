@@ -16,11 +16,6 @@ namespace MakeMeUpzz.Handler
             return MakeupRepository.GetMakeups();
         }
 
-        public static List<Makeup> GetMakeupsOrderByBrand()
-        {
-            return MakeupRepository.GetMakeupsOrderByBrand();
-        }
-
         public static void DeleteMakeupByID(int id)
         {
             Makeup toDelete = MakeupRepository.GetMakeupById(id);

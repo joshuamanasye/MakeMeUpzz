@@ -10,21 +10,21 @@ namespace MakeMeUpzz.Repository
     {
         private static readonly DBMakeMeUpzzEntities db = DatabaseSingleton.GetInstance();
 
-        public static List<Cart> GetCartsByUsername(string username)
+        public static List<Cart> GetCartsByUserID(int userID)
         {
             List<Cart> userCarts = (from c
                                     in db.Carts
-                                    where c.User.Username.Equals(username)
+                                    where c.UserID == userID
                                     select c).ToList();
 
             return userCarts;
         }
 
-        public static Cart GetCart(string username, int makeupId)
+        public static Cart GetCart(int userId, int makeupId)
         {
             Cart cart = (from c
                          in db.Carts
-                         where c.User.Username.Equals(username) && c.MakeupID == makeupId
+                         where c.UserID == userId && c.MakeupID == makeupId
                          select c).FirstOrDefault();
 
             return cart;

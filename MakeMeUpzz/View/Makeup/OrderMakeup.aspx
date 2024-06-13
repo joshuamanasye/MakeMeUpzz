@@ -28,6 +28,7 @@
 
     <asp:Label ID="OrderLbl" runat="server" Text=""></asp:Label>
 
+    <hr />
     <%-- CartGV hanya untuk tes, bukan aplikasi karena tidak ada di soal --%>
     <h2>Cart</h2>
     <asp:GridView ID="CartGV" runat="server"></asp:GridView>

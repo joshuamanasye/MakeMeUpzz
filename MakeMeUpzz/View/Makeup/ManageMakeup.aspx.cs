@@ -21,7 +21,7 @@ namespace MakeMeUpzz.View
 
             if (IsPostBack) { return; }
 
-            controller.LoadMakeupsOrderByBrand(MakeupGV);
+            controller.LoadMakeupDataToGV(MakeupGV, MakeupTypeGV, MakeupBrandGV);
         }
 
         protected void MakeupGV_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -34,6 +34,16 @@ namespace MakeMeUpzz.View
             int id = Convert.ToInt32(MakeupGV.Rows[e.NewEditIndex].Cells[0].Text);
 
             controller.RedirectToUpdateMakeup(id, Response);
+        }
+
+        protected void MakeupTypeGV_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
+
+        protected void MakeupBrandGV_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
         }
     }
 }

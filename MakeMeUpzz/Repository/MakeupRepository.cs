@@ -18,17 +18,6 @@ namespace MakeMeUpzz.Repository
             return makeups;
         }
 
-        public static List<Makeup> GetMakeupsOrderByBrand()
-        {
-            List<Makeup> makeups = (from m
-                                    in db.Makeups
-                                    orderby m.MakeupBrand.MakeupBrandRating
-                                    descending
-                                    select m).ToList();
-
-            return makeups;
-        }
-
         public static Makeup GetMakeupById(int id)
         {
             Makeup makeup = (from m in db.Makeups where m.MakeupID == id select m).FirstOrDefault();
