@@ -15,6 +15,10 @@ namespace MakeMeUpzz.View
         protected void Page_Load(object sender, EventArgs e)
         {
             controller = new UserController();
+
+            if (IsPostBack) { return; }
+
+            controller.LoadUserDataToForm(Session, UsernameTxt, EmailTxt, GenderRB, DobCalendar);
         }
 
         protected void UpdateBtn_Click(object sender, EventArgs e)

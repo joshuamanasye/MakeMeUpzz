@@ -212,6 +212,51 @@ namespace MakeMeUpzz.Controller
             response.Redirect("~/View/Login.aspx");
         }
 
+        public void LoadUserDataToForm(HttpSessionState session,
+            TextBox usernameTxt, TextBox emailTxt, RadioButtonList genderRb, Calendar dobCalendar)
+        {
+            string username = session["username"].ToString();
+            User user = UserHandler.GetUser(username);
+
+            usernameTxt.Text = user.Username;
+            emailTxt.Text = user.UserEmail;
+            if (user.UserGender.Equals("Male"))
+            {
+                genderRb.SelectedIndex = 0;
+            }
+            else
+            {
+                genderRb.SelectedIndex = 1;
+            }
+            dobCalendar.SelectedDate = user.UserDOB;
+        }
+
+        private bool CheckUsernameUpdate(string currentUsername, string username, Label usernameErrorLbl)
+        {
+            if (string.IsNullOrEmpty(username))
+            {
+                usernameErrorLbl.Text = "Username cannot be empty";
+                return false;
+            }
+
+            if (currentUsername.Equals(username)) return true;
+
+            if (username.Length < 5 || username.Length > 15)
+            {
+                usernameErrorLbl.Text = "Username must be between 5-15 characters";
+                return false;
+            }
+
+            if (UserHandler.GetUser(username) != null)
+            {
+                usernameErrorLbl.Text = "Username already exists";
+                return false;
+            }
+
+            usernameErrorLbl.Text = string.Empty;
+            return true;
+        }
+
         public void UpdateProfile(HttpSessionState session,
             string username, string email, string gender, DateTime dob,
             Label usernameErrorLbl, Label emailErrorLbl, Label genderErrorLbl, Label dobErrorLbl,
@@ -222,7 +267,7 @@ namespace MakeMeUpzz.Controller
             int userId = currenUser.UserID;
 
             bool validInput = true;
-            if (!CheckUsername(username, usernameErrorLbl)) { validInput = false; }
+            if (!CheckUsernameUpdate(currenUsername, username, usernameErrorLbl)) { validInput = false; }
             if (!CheckEmail(email, emailErrorLbl)) { validInput = false; }
             if (!CheckGender(gender, genderErrorLbl)) { validInput = false; }
             if (!CheckDob(dob, dobErrorLbl)) { validInput = false; }
