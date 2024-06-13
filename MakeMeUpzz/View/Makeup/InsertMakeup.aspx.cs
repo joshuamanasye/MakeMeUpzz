@@ -15,7 +15,7 @@ namespace MakeMeUpzz.View.Makeup
         {
             this.controller = new MakeupController();
 
-            //TODO check if user is admin
+            controller.CheckAdmin(Response, Session);
 
             if (IsPostBack) { return; }
 

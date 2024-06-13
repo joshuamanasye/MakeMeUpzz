@@ -19,7 +19,7 @@ namespace MakeMeUpzz.View.Makeup
             makeupController = new MakeupController();
             cartController = new CartController();
 
-            // TODO check if user is customer
+            makeupController.CheckCustomer(Response, Session);
 
             if (IsPostBack) { return; }
 

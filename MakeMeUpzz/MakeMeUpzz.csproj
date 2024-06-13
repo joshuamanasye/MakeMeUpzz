@@ -100,6 +100,8 @@
     <Content Include="View\Makeup\ManageMakeup.aspx" />
     <Content Include="View\Makeup\OrderMakeup.aspx" />
     <Content Include="View\Makeup\UpdateMakeup.aspx" />
+    <Content Include="View\Makeup\UpdateMakeupBrand.aspx" />
+    <Content Include="View\Makeup\UpdateMakeupType.aspx" />
     <Content Include="View\Profile.aspx" />
     <Content Include="View\Register.aspx" />
     <Content Include="View\Transaction\TransactionDetail.aspx" />
@@ -160,9 +162,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CartRepository.cs" />
     <Compile Include="Repository\DatabaseSingleton.cs" />
-    <Compile Include="Repository\MakeupRepository.cs" />
-    <Compile Include="Repository\Transaction\TransactionDetailRepository.cs" />
-    <Compile Include="Repository\Transaction\TransactionHeaderRepository.cs" />
+    <Compile Include="Repository\MakeupRepo\MakeupBrandRepository.cs" />
+    <Compile Include="Repository\MakeupRepo\MakeupRepository.cs" />
+    <Compile Include="Repository\MakeupRepo\MakeupTypeRepository.cs" />
+    <Compile Include="Repository\TransactionRepo\TransactionDetailRepository.cs" />
+    <Compile Include="Repository\TransactionRepo\TransactionHeaderRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Util\UtilConvert.cs" />
     <Compile Include="View\Home.aspx.cs">
@@ -206,6 +210,20 @@
     </Compile>
     <Compile Include="View\Makeup\UpdateMakeup.aspx.designer.cs">
       <DependentUpon>UpdateMakeup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Makeup\UpdateMakeupBrand.aspx.cs">
+      <DependentUpon>UpdateMakeupBrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Makeup\UpdateMakeupBrand.aspx.designer.cs">
+      <DependentUpon>UpdateMakeupBrand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Makeup\UpdateMakeupType.aspx.cs">
+      <DependentUpon>UpdateMakeupType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Makeup\UpdateMakeupType.aspx.designer.cs">
+      <DependentUpon>UpdateMakeupType.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>

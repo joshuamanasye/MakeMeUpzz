@@ -17,7 +17,7 @@ namespace MakeMeUpzz.View
         {
             controller = new MakeupController();
 
-            //TODO check if user is admin
+            controller.CheckAdmin(Response, Session);
 
             if (IsPostBack) { return; }
 
@@ -38,12 +38,16 @@ namespace MakeMeUpzz.View
 
         protected void MakeupTypeGV_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            int id = Convert.ToInt32(MakeupGV.Rows[e.NewEditIndex].Cells[0].Text);
 
+            controller.RedirectToUpdateMakeupType(id, Response);
         }
 
         protected void MakeupBrandGV_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            int id = Convert.ToInt32(MakeupGV.Rows[e.NewEditIndex].Cells[0].Text);
 
+            controller.RedirectToUpdateMakeupBrand(id, Response);
         }
     }
 }

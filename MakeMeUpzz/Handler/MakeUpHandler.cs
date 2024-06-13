@@ -1,6 +1,7 @@
 ﻿using MakeMeUpzz.Factory;
 using MakeMeUpzz.Model;
-using MakeMeUpzz.Repository;
+using MakeMeUpzz.Repository.MakeupRepo;
+using MakeMeUpzz.View.Makeup;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,6 +17,11 @@ namespace MakeMeUpzz.Handler
             return MakeupRepository.GetMakeups();
         }
 
+        public static Makeup GetmakeupByID(int id)
+        {
+            return MakeupRepository.GetMakeupById(id);
+        }
+
         public static void DeleteMakeupByID(int id)
         {
             Makeup toDelete = MakeupRepository.GetMakeupById(id);
@@ -25,17 +31,27 @@ namespace MakeMeUpzz.Handler
 
         public static List<MakeupType> GetMakeupTypes()
         {
-            return MakeupRepository.GetMakeupTypes();
+            return MakeupTypeRepository.GetMakeupTypes();
+        }
+
+        public static MakeupType GetMakeupTypeByID(int id)
+        {
+            return MakeupTypeRepository.GetMakeupTypeByID(id);
         }
 
         public static List<MakeupBrand> GetMakeupBrands()
         {
-            return MakeupRepository.GetMakeupBrands();
+            return MakeupBrandRepository.GetMakeupBrands();
+        }
+
+        public static MakeupBrand GetMakeupBrandByID(int id)
+        {
+            return MakeupBrandRepository.GetMakeupBrandByID(id);
         }
 
         public static List<string> GetMakeupTypeNames()
         {
-            List<MakeupType> types = MakeupRepository.GetMakeupTypes();
+            List<MakeupType> types = MakeupTypeRepository.GetMakeupTypes();
 
             List<string> typeNames = new List<string>();
 
@@ -49,7 +65,7 @@ namespace MakeMeUpzz.Handler
 
         public static List<string> GetMakeupBrandNames()
         {
-            List<MakeupBrand> brands = MakeupRepository.GetMakeupBrands();
+            List<MakeupBrand> brands = MakeupBrandRepository.GetMakeupBrands();
 
             List<string> brandNames = new List<string>();
 
@@ -65,10 +81,10 @@ namespace MakeMeUpzz.Handler
         {
             int newId = MakeupRepository.GetLastID() + 1;
 
-            int typeId = MakeupRepository.GetMakeupTypeIDByName(typeName);
-            int brandId = MakeupRepository.GetMakeupBrandIDByName(brandName);
+            MakeupType type = MakeupTypeRepository.GetMakeupTypeByName(typeName);
+            MakeupBrand brand = MakeupBrandRepository.GetMakeupBrandByName(brandName);
 
-            Makeup newMakeup = MakeupFactory.CreateMakeup(newId, name, price, weight, typeId, brandId);
+            Makeup newMakeup = MakeupFactory.CreateMakeup(newId, name, price, weight, type.MakeupTypeID, brand.MakeupBrandID);
 
             MakeupRepository.AddMakeup(newMakeup);
         }
@@ -76,10 +92,43 @@ namespace MakeMeUpzz.Handler
         public static void UpdateMakeupByID(int id, string name, int price, int weight, string typeName, string brandName)
         {
             Makeup toUpdate = MakeupRepository.GetMakeupById(id);
-            int typeId = MakeupRepository.GetMakeupTypeIDByName(typeName);
-            int brandId = MakeupRepository.GetMakeupBrandIDByName(brandName);
 
-            MakeupRepository.UpdateMakeup(toUpdate, name, price, weight, typeId, brandId);
+            MakeupType type = MakeupTypeRepository.GetMakeupTypeByName(typeName);
+            MakeupBrand brand = MakeupBrandRepository.GetMakeupBrandByName(brandName);
+
+            MakeupRepository.UpdateMakeup(toUpdate, name, price, weight, type.MakeupTypeID, brand.MakeupBrandID);
+        }
+
+        public static void AddMakeupType(string name)
+        {
+            int newId = MakeupTypeRepository.GetLastID() + 1;
+
+            MakeupType newMakeupType = MakeupFactory.CreateType(newId, name);
+
+            MakeupTypeRepository.AddMakeupType(newMakeupType);
+        }
+
+        public static void UpdateMakeupTypeByID(int id, string name)
+        {
+            MakeupType toUpdate = MakeupTypeRepository.GetMakeupTypeByID(id);
+
+            MakeupTypeRepository.UpdateMakeupType(toUpdate, name);
+        }
+
+        public static void AddMakeupBrand(string name, int rating)
+        {
+            int newId = MakeupBrandRepository.GetLastID() + 1;
+
+            MakeupBrand newMakeupbrand = MakeupFactory.CreateBrand(newId, name, rating);
+
+            MakeupBrandRepository.AddMakeupBrand(newMakeupbrand);
+        }
+
+        public static void UpdateMakeupBrandByID(int id, string name, int rating)
+        {
+            MakeupBrand toUpdate = MakeupBrandRepository.GetMakeupBrandByID(id);
+
+            MakeupBrandRepository.UpdateMakeupBrand(toUpdate, name, rating);
         }
     }
 }

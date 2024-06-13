@@ -1,12 +1,13 @@
 ﻿using MakeMeUpzz.Handler;
 using MakeMeUpzz.Model;
-using MakeMeUpzz.Repository;
+using MakeMeUpzz.Repository.MakeupRepo;
 using MakeMeUpzz.Util;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
+using System.Web.SessionState;
 using System.Web.UI.WebControls;
 
 namespace MakeMeUpzz.Controllers
@@ -77,16 +78,33 @@ namespace MakeMeUpzz.Controllers
             return id;
         }
 
-        public void LoadMakeupDatatoForm(int id,
+        public void LoadMakeupDataToForm(int id,
             TextBox nameTxt, TextBox priceTxt, TextBox weightTxt, DropDownList typeDdl, DropDownList brandDdl)
         {
-            Makeup toLoad = MakeupRepository.GetMakeupById(id);
+            Makeup toLoad = MakeUpHandler.GetmakeupByID(id);
 
             nameTxt.Text = toLoad.MakeupName;
             priceTxt.Text = toLoad.MakeupPrice.ToString();
             weightTxt.Text = toLoad.MakeupWeight.ToString();
             typeDdl.SelectedValue = toLoad.MakeupType.MakeupTypeName.ToString();
             brandDdl.SelectedValue = toLoad.MakeupBrand.MakeupBrandName.ToString();
+        }
+
+        public void LoadMakeupTypeDataToForm(int id,
+            TextBox nameTxt)
+        {
+            MakeupType toLoad = MakeUpHandler.GetMakeupTypeByID(id);
+
+            nameTxt.Text = toLoad.MakeupTypeName;
+        }
+
+        public void LoadMakeupBrandDataToForm(int id,
+            TextBox nameTxt, TextBox ratingTxt)
+        {
+            MakeupBrand toLoad = MakeUpHandler.GetMakeupBrandByID(id);
+
+            nameTxt.Text = toLoad.MakeupBrandName;
+            ratingTxt.Text = toLoad.MakeupBrandRating.ToString();
         }
 
         public void DeleteMakeup(GridView gv, GridViewDeleteEventArgs e)
@@ -140,6 +158,20 @@ namespace MakeMeUpzz.Controllers
             return true;
         }
 
+        private bool CheckRating(int rating, Label ratingErrorLbl)
+        {
+            if (rating > 100 || rating < 0)
+            {
+                ratingErrorLbl.Text = "Must be between 0 - 100";
+
+                return false;
+            }
+
+            ratingErrorLbl.Text = string.Empty;
+
+            return true;
+        }
+
         private bool CheckMakeupData(string name, int price, int weight, string typeName, string brandName,
             Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl)
         {
@@ -153,7 +185,8 @@ namespace MakeMeUpzz.Controllers
         }
 
         public void InsertMakeup(string name, string priceStr, string weightStr, string typeName, string brandName,
-            Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl, HttpResponse response)
+            Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl,
+            HttpResponse response)
         {
             int price = UtilConvert.ToInt(priceStr);
             int weight = UtilConvert.ToInt(weightStr);
@@ -166,7 +199,8 @@ namespace MakeMeUpzz.Controllers
         }
 
         public void UpdateMakeup(int id, string name, string priceStr, string weightStr, string typeName, string brandName,
-            Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl, HttpResponse response)
+            Label nameErrorLbl, Label priceErrorLbl, Label weightErrorLbl,
+            HttpResponse response)
         {
             int price = UtilConvert.ToInt(priceStr);
             int weight = UtilConvert.ToInt(weightStr);
@@ -178,9 +212,99 @@ namespace MakeMeUpzz.Controllers
             response.Redirect("ManageMakeup.aspx");
         }
 
+        public void InsertMakeupType(string name,
+            Label nameErrorLbl,
+            HttpResponse response)
+        {
+            if (!CheckName(name, nameErrorLbl)) { return; }
+
+            MakeUpHandler.AddMakeupType(name);
+
+            response.Redirect("ManageMakeup.aspx");
+        }
+
+        public void UpdateMakeupType(int id, string name,
+            Label nameErrorLbl,
+            HttpResponse response)
+        {
+            if (!CheckName(name, nameErrorLbl)) { return; }
+
+            MakeUpHandler.UpdateMakeupTypeByID(id, name);
+
+            response.Redirect("ManageMakeup.aspx");
+        }
+
+        private bool CheckMakeupBrandData(string name, int rating,
+            Label nameErrorLbl, Label ratingErrorLbl)
+        {
+            bool validInput = true;
+            if (!CheckName(name, nameErrorLbl)) { validInput = false; }
+            if (!CheckRating(rating, ratingErrorLbl)) { validInput = false; }
+
+            return validInput;
+        }
+
+        public void InsertMakeupBrand(string name, string ratingStr,
+            Label nameErrorLbl, Label ratingErrorLbl,
+            HttpResponse response)
+        {
+            int rating = UtilConvert.ToInt(ratingStr);
+
+            if (!CheckMakeupBrandData(name, rating, nameErrorLbl, ratingErrorLbl)) { return; }
+
+            MakeUpHandler.AddMakeupBrand(name, rating);
+
+            response.Redirect("ManageMakeup.aspx");
+        }
+
+        public void UpdateMakeupBrand(int id, string name, string ratingStr,
+            Label nameErrorLbl, Label ratingErrorLbl,
+            HttpResponse response)
+        {
+            int rating = UtilConvert.ToInt(ratingStr);
+
+            if ( !CheckMakeupBrandData(name, rating, nameErrorLbl, ratingErrorLbl) ) { return; }
+
+            MakeUpHandler.UpdateMakeupBrandByID(id, name, rating);
+
+            response.Redirect("ManageMakeup.aspx");
+        }
+
         public void RedirectToUpdateMakeup(int id, HttpResponse response)
         {
             response.Redirect("UpdateMakeup.aspx?ID=" + id);
+        }
+
+        public void RedirectToUpdateMakeupType(int id, HttpResponse response)
+        {
+            response.Redirect("UpdateMakeupType.aspx?ID=" + id);
+        }
+
+        public void RedirectToUpdateMakeupBrand(int id, HttpResponse response)
+        {
+            response.Redirect("UpdateMakeupBrand.aspx?ID=" + id);
+        }
+
+        public void CheckAdmin(HttpResponse response, HttpSessionState session)
+        {
+            string username = session["username"].ToString();
+            User user = UserHandler.GetUser(username);
+
+            if (!user.UserRole.Equals("admin"))
+            {
+                response.Redirect("~/View/Home.aspx");
+            }
+        }
+
+        public void CheckCustomer(HttpResponse response, HttpSessionState session)
+        {
+            string username = session["username"].ToString();
+            User user = UserHandler.GetUser(username);
+
+            if (!user.UserRole.Equals("customer"))
+            {
+                response.Redirect("~/View/Home.aspx");
+            }
         }
     }
 }

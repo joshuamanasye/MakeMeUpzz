@@ -16,7 +16,7 @@ namespace MakeMeUpzz.View.Makeup
         {
             controller = new MakeupController();
 
-            //TODO check if user is admin
+            controller.CheckAdmin(Response, Session);
 
             if (IsPostBack) { return; }
 
@@ -24,7 +24,7 @@ namespace MakeMeUpzz.View.Makeup
 
             int id = controller.RequestID(Request, Response);
 
-            controller.LoadMakeupDatatoForm(id, NameTxt, PriceTxt, WeightTxt, TypeDdl, BrandDdl);
+            controller.LoadMakeupDataToForm(id, NameTxt, PriceTxt, WeightTxt, TypeDdl, BrandDdl);
         }
 
         protected void UpdateBtn_Click(object sender, EventArgs e)
