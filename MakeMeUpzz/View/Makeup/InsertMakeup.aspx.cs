@@ -13,7 +13,7 @@ namespace MakeMeUpzz.View.Makeup
         MakeupController controller;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.controller = new MakeupController();
+            controller = new MakeupController();
 
             controller.CheckAdmin(Response, Session);
 

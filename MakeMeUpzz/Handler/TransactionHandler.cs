@@ -36,6 +36,22 @@ namespace MakeMeUpzz.Handler
             return transactions;
         }
 
+        public static List<TransactionHeader> GetTransactionsByStatus(bool isHandled)
+        {
+            List<TransactionHeader> transactions;
+
+            if (isHandled)
+            {
+                transactions = TransactionHeaderRepository.GetHandledTransactionHeaders();
+            }
+            else
+            {
+                transactions = TransactionHeaderRepository.GetUnhandledTransactionHeaders();
+            }
+
+            return transactions;
+        }
+
         public static List <TransactionHeader> GetUserTransactions(int userId)
         {
             List<TransactionHeader> userTransaction = TransactionHeaderRepository.GetTransactionheadersByUserID(userId);

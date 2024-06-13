@@ -97,6 +97,8 @@
     <Content Include="View\Home.aspx" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\Makeup\InsertMakeup.aspx" />
+    <Content Include="View\Makeup\InsertMakeupBrand.aspx" />
+    <Content Include="View\Makeup\InsertMakeupType.aspx" />
     <Content Include="View\Makeup\ManageMakeup.aspx" />
     <Content Include="View\Makeup\OrderMakeup.aspx" />
     <Content Include="View\Makeup\UpdateMakeup.aspx" />
@@ -104,6 +106,7 @@
     <Content Include="View\Makeup\UpdateMakeupType.aspx" />
     <Content Include="View\Profile.aspx" />
     <Content Include="View\Register.aspx" />
+    <Content Include="View\Transaction\HandleTransaction.aspx" />
     <Content Include="View\Transaction\TransactionDetail.aspx" />
     <Content Include="View\Transaction\TransactionList.aspx" />
     <Content Include="Web.config" />
@@ -190,6 +193,20 @@
     <Compile Include="View\Makeup\InsertMakeup.aspx.designer.cs">
       <DependentUpon>InsertMakeup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Makeup\InsertMakeupBrand.aspx.cs">
+      <DependentUpon>InsertMakeupBrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Makeup\InsertMakeupBrand.aspx.designer.cs">
+      <DependentUpon>InsertMakeupBrand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Makeup\InsertMakeupType.aspx.cs">
+      <DependentUpon>InsertMakeupType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Makeup\InsertMakeupType.aspx.designer.cs">
+      <DependentUpon>InsertMakeupType.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Makeup\ManageMakeup.aspx.cs">
       <DependentUpon>ManageMakeup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,6 +255,13 @@
     </Compile>
     <Compile Include="View\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\HandleTransaction.aspx.cs">
+      <DependentUpon>HandleTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\HandleTransaction.aspx.designer.cs">
+      <DependentUpon>HandleTransaction.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Transaction\TransactionDetail.aspx.cs">
       <DependentUpon>TransactionDetail.aspx</DependentUpon>

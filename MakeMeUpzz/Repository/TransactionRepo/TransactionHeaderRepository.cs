@@ -27,6 +27,16 @@ namespace MakeMeUpzz.Repository
             return transactionHeaders;
         }
 
+        public static List<TransactionHeader> GetHandledTransactionHeaders()
+        {
+            List<TransactionHeader> transactionHeaders = (from th
+                                                          in db.TransactionHeaders
+                                                          where th.Status.Equals("handled")
+                                                          select th).ToList();
+
+            return transactionHeaders;
+        }
+
         public static List<TransactionHeader> GetTransactionheadersByUserID(int userId)
         {
             List<TransactionHeader> transactionHeaders = (from th
