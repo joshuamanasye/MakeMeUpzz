@@ -12,7 +12,11 @@ namespace MakeMeUpzz.Repository.MakeupRepo
 
         public static List<MakeupBrand> GetMakeupBrands()
         {
-            List<MakeupBrand> brands = (from b in db.MakeupBrands select b).ToList();
+            List<MakeupBrand> brands = (from b
+                                        in db.MakeupBrands
+                                        orderby b.MakeupBrandRating
+                                        descending
+                                        select b).ToList();
 
             return brands;
         }
