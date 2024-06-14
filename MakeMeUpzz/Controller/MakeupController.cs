@@ -116,6 +116,24 @@ namespace MakeMeUpzz.Controllers
             LoadMakeupsToGV(gv);
         }
 
+        public void DeleteMakeupType(GridView gv, GridViewDeleteEventArgs e)
+        {
+            int id = Convert.ToInt32(gv.Rows[e.RowIndex].Cells[0].Text);
+
+            MakeUpHandler.DeleteMakeupTypeByID(id);
+
+            LoadMakeupTypesToGV(gv);
+        }
+
+        public void DeleteMakeupBrand(GridView gv, GridViewDeleteEventArgs e)
+        {
+            int id = Convert.ToInt32(gv.Rows[e.RowIndex].Cells[0].Text);
+
+            MakeUpHandler.DeleteMakeupBrandByID(id);
+
+            LoadMakeupBrandsToGV(gv);
+        }
+
         private bool CheckName(string name, Label nameErrorLbl)
         {
             if (name.Length < 1 || name.Length > 99)

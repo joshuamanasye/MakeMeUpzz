@@ -44,12 +44,37 @@ namespace MakeMeUpzz.Repository.MakeupRepo
             db.SaveChanges();
         }
 
+        public static bool ExistingMakeup(MakeupType type)
+        {
+            Makeup existing = (from m in db.Makeups where m.MakeupTypeID == type.MakeupTypeID select m).ToList().FirstOrDefault();
+            if (existing != null) { return true; } //handle kalo gk bisa didelete
+
+            return false;
+        }
+
+        public static bool ExistingMakeup(MakeupBrand brand)
+        {
+            Makeup existing = (from m in db.Makeups where m.MakeupBrandID == brand.MakeupBrandID select m).ToList().FirstOrDefault();
+            if (existing != null) { return true; } //handle kalo gk bisa didelete
+
+            return false;
+        }
+
         public static void DeleteMakeup(Makeup makeup)
         {
             if (makeup == null) { return; }
-            
-            db.Makeups.Remove(makeup);
-            db.SaveChanges();
+
+            if (TransactionDetailRepository.ExistingTransaction(makeup)) { return; }
+
+            try
+            {
+                db.Makeups.Remove(makeup);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Unable to delete makeup.", ex);
+            }
         }
 
         public static int GetLastID()

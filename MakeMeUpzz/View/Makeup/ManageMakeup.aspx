@@ -23,23 +23,23 @@
     </div>
     <div>
         <h2>Makeup Type</h2>
-        <asp:GridView ID="MakeupTypeGV" runat="server" OnRowEditing="MakeupTypeGV_RowEditing" AutoGenerateColumns="False">
+        <asp:GridView ID="MakeupTypeGV" runat="server" OnRowEditing="MakeupTypeGV_RowEditing" OnRowDeleting="MakeupTypeGV_RowDeleting" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="MakeupTypeID" HeaderText="ID" SortExpression="MakeupTypeID" />
                 <asp:BoundField DataField="MakeupTypeName" HeaderText="Name" SortExpression="MakeupTypeName" />
-                <asp:CommandField ButtonType="Button" HeaderText="Action" ShowCancelButton="False" ShowEditButton="True" ShowHeader="True" />
+                <asp:CommandField ButtonType="Button" HeaderText="Action" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" ShowHeader="True"/>
             </Columns>
         </asp:GridView>
         <a href="InsertMakeupType.aspx">Insert Makeup Type</a>
     </div>
     <div>
         <h2>Makeup Brand</h2>
-        <asp:GridView ID="MakeupBrandGV" runat="server" OnRowEditing="MakeupBrandGV_RowEditing" AutoGenerateColumns="False">
+        <asp:GridView ID="MakeupBrandGV" runat="server" OnRowEditing="MakeupBrandGV_RowEditing" OnRowDeleting="MakeupBrandGV_RowDeleting" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="MakeupBrandID" HeaderText="ID" SortExpression="MakeupBrandID" />
                 <asp:BoundField DataField="MakeupBrandName" HeaderText="Name" SortExpression="MakeupBrandName" />
                 <asp:BoundField DataField="MakeupBrandRating" HeaderText="Name" SortExpression="MakeupBrandRating" />
-                <asp:CommandField ButtonType="Button" HeaderText="Action" ShowCancelButton="False" ShowEditButton="True" ShowHeader="True" />
+                <asp:CommandField ButtonType="Button" HeaderText="Action" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" ShowHeader="True"/>
             </Columns>
         </asp:GridView>
         <a href="InsertMakeupBrand.aspx">Insert Makeup Brand</a>

@@ -49,5 +49,15 @@ namespace MakeMeUpzz.View
 
             controller.RedirectToUpdateMakeupBrand(id, Response);
         }
+
+        protected void MakeupTypeGV_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            controller.DeleteMakeupType(MakeupTypeGV, e);
+        }
+
+        protected void MakeupBrandGV_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            controller.DeleteMakeupBrand(MakeupBrandGV, e);
+        }
     }
 }

@@ -27,5 +27,16 @@ namespace MakeMeUpzz.Repository
             db.TransactionDetails.Add(detail);
             db.SaveChanges();
         }
+
+        public static bool ExistingTransaction(Makeup makeup)
+        {
+            TransactionDetail existing = (from td
+                                          in db.TransactionDetails
+                                          where td.MakeupID == makeup.MakeupID
+                                          select td).ToList().FirstOrDefault();
+            if (existing != null) { return true; }
+
+            return false;
+        }
     }
 }

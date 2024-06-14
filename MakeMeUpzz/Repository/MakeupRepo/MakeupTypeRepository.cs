@@ -1,6 +1,7 @@
 ﻿using MakeMeUpzz.Model;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Web;
 using System.Xml.Linq;
@@ -44,6 +45,23 @@ namespace MakeMeUpzz.Repository.MakeupRepo
         {
             type.MakeupTypeName = name;
             db.SaveChanges();
+        }
+
+        public static void DeleteMakeupType(MakeupType type)
+        {
+            if (type == null) { return; }
+
+            if (MakeupRepository.ExistingMakeup(type)) { return; } //handle kalo gk bisa didelete
+
+            try
+            {
+                db.MakeupTypes.Remove(type);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Unable to delete makeup.", ex);
+            }
         }
 
         public static int GetLastID()

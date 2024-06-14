@@ -50,6 +50,23 @@ namespace MakeMeUpzz.Repository.MakeupRepo
             db.SaveChanges();
         }
 
+        public static void DeleteMakeupBrand(MakeupBrand brand)
+        {
+            if (brand == null) { return; }
+
+            if (MakeupRepository.ExistingMakeup(brand)) { return; } //handle kalo gk bisa didelete
+
+            try
+            {
+                db.MakeupBrands.Remove(brand);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Unable to delete makeup brand.", ex);
+            }
+        }
+
         public static int GetLastID()
         {
             int id = Convert.ToInt32((from mb in db.MakeupBrands select mb.MakeupBrandID).ToList().LastOrDefault());

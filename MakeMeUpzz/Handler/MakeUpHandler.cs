@@ -115,6 +115,12 @@ namespace MakeMeUpzz.Handler
             MakeupTypeRepository.UpdateMakeupType(toUpdate, name);
         }
 
+        public static void DeleteMakeupTypeByID(int id)
+        {
+            MakeupType toDelete = MakeupTypeRepository.GetMakeupTypeByID(id);
+            MakeupTypeRepository.DeleteMakeupType(toDelete);
+        }
+
         public static void AddMakeupBrand(string name, int rating)
         {
             int newId = MakeupBrandRepository.GetLastID() + 1;
@@ -129,6 +135,12 @@ namespace MakeMeUpzz.Handler
             MakeupBrand toUpdate = MakeupBrandRepository.GetMakeupBrandByID(id);
 
             MakeupBrandRepository.UpdateMakeupBrand(toUpdate, name, rating);
+        }
+
+        public static void DeleteMakeupBrandByID(int id)
+        {
+            MakeupBrand toDelete = MakeupBrandRepository.GetMakeupBrandByID(id);
+            MakeupBrandRepository.DeleteMakeupBrand(toDelete);
         }
     }
 }
