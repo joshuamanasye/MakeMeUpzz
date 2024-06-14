@@ -38,14 +38,14 @@ namespace MakeMeUpzz.View
 
         protected void MakeupTypeGV_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            int id = Convert.ToInt32(MakeupGV.Rows[e.NewEditIndex].Cells[0].Text);
+            int id = Convert.ToInt32(MakeupTypeGV.Rows[e.NewEditIndex].Cells[0].Text);
 
             controller.RedirectToUpdateMakeupType(id, Response);
         }
 
         protected void MakeupBrandGV_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            int id = Convert.ToInt32(MakeupGV.Rows[e.NewEditIndex].Cells[0].Text);
+            int id = Convert.ToInt32(MakeupBrandGV.Rows[e.NewEditIndex].Cells[0].Text);
 
             controller.RedirectToUpdateMakeupBrand(id, Response);
         }
