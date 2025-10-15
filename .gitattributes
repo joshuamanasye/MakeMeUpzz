@@ -61,3 +61,11 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+###############################################################################
+# Exclude auto-generated or vendor files from GitHub language statistics
+###############################################################################
+wwwroot/js/* linguist-vendored
+wwwroot/lib/* linguist-vendored
+wwwroot/assets/* linguist-vendored
+node_modules/* linguist-vendored
