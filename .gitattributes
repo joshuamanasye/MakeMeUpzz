@@ -69,3 +69,8 @@ wwwroot/js/* linguist-vendored
 wwwroot/lib/* linguist-vendored
 wwwroot/assets/* linguist-vendored
 node_modules/* linguist-vendored
+
+###############################################################################
+# Exclude Crystal Reports auto-generated JS from language stats
+###############################################################################
+MakeMeUpzz/aspnet_client/system_web/4_0_30319/crystalreportviewers13/** linguist-vendored
