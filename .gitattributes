@@ -70,5 +70,13 @@ wwwroot/lib/* linguist-vendored
 wwwroot/assets/* linguist-vendored
 node_modules/* linguist-vendored
 
-# exclude Crystal Reports JS from language stats
-MakeMeUpzz/MakeMeUpzz/aspnet_client/**/crystalreportviewers13/** linguist-vendored
+# Ignore Crystal Reports and generated JS files
+MakeMeUpzz/aspnet_client/** linguist-vendored
+
+# Ignore build and dependency folders
+MakeMeUpzz/bin/** linguist-vendored
+MakeMeUpzz/obj/** linguist-vendored
+MakeMeUpzz/packages/** linguist-vendored
+
+# Optionally ignore VS caches and tools
+MakeMeUpzz/.vs/** linguist-vendored
