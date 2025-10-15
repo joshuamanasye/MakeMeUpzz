@@ -70,13 +70,8 @@ wwwroot/lib/* linguist-vendored
 wwwroot/assets/* linguist-vendored
 node_modules/* linguist-vendored
 
-# Ignore Crystal Reports and generated JS files
+# Exclude vendor / auto-generated / build files from GitHub language stats
 MakeMeUpzz/aspnet_client/** linguist-vendored
-
-# Ignore build and dependency folders
 MakeMeUpzz/bin/** linguist-vendored
 MakeMeUpzz/obj/** linguist-vendored
-MakeMeUpzz/packages/** linguist-vendored
-
-# Optionally ignore VS caches and tools
-MakeMeUpzz/.vs/** linguist-vendored
+packages/** linguist-vendored
